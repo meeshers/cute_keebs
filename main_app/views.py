@@ -41,4 +41,4 @@ def signup(request):
 
 @login_required
 def profile(request):
-  return HttpResponse('<h1>This is the profile page</h1>')
+  return render(request, 'profile.html')

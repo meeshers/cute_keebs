@@ -7,5 +7,5 @@ const modal = type => {
 };
 
 /* Event Listener */
-$('#sign-in').on('click', () => modal('signin-form'));
+$('#login').on('click', () => modal('login-form'));
 $('#sign-up').on('click', () => modal('signup-form'));
