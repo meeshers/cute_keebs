@@ -18,10 +18,10 @@ def home(request):
   return render(request,'home.html', context)
 
 def tips(request):
-  return HttpResponse('<h1>This is the tips page</h1>')
+  return render(request, 'tips.html')
 
 def discover(request):
-  return HttpResponse('<h1>This is the parts page</h1>')
+  return render(request, 'discover.html')
 
 #sign up/register
 def signup(request):
