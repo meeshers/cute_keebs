@@ -1,11 +1,27 @@
 from django.db import models
-# from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
+class CustomUser(AbstractUser):
+  full_name = models.CharField(max_length=50)
+  email = models.EmailField(max_length=50)
+
+  USERNAME_FIELD = "username"
+
+  def __str__(self):
+    return self.username
+
+# tactile/linear/clicky/misc
+SWITCH_TYPE = (
+  ('LI', 'Linear'),
+  ('TA', 'Tactile'),
+  ('CL', 'Clicky'),
+  ('MI', 'Other')
+)
+
 class Switch(models.Model):
   name = models.CharField(max_length=50)
-  switch_type = models.CharField(max_length=50)
+  switch_type = models.CharField(max_length=2, choices=SWITCH_TYPE, default=SWITCH_TYPE[0][0]) 
   description = models.TextField(max_length=1000)
   image = models.CharField(max_length=1000)
 
@@ -95,17 +111,8 @@ class Keyboard(models.Model):
   pcb = models.OneToOneField(PCB, on_delete=models.CASCADE)
   stabilizer = models.OneToOneField(Stabilizer, on_delete=models.CASCADE)
   keycap = models.OneToOneField(Keycap, on_delete=models.CASCADE)
-  # user = models.ForeignKey(CustomUser, on_delete = models.CASCADE)
+  user = models.ForeignKey(CustomUser, on_delete = models.CASCADE)
   description = models.TextField(max_length=1000)
 
   def __str__(self):
     return self.name
-
-
-""" class CustomUser(AbstractUser):
-    full_name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    keyboards = models.ForeignKey(Keyboard, on_delete = models.CASCADE)
-
-    def __str__(self):
-        return self.username """
