@@ -16,4 +16,8 @@ urlpatterns = [
   # keyboard parts routes
   path('discover/', views.discover, name='discover'),
   path('discover/cases', views.cases, name="cases"),
+  path('discover/switches', views.switches, name="switches"),
+  path('discover/keycaps', views.keycaps, name="keycaps"),
+  path('discover/stabilizers', views.stabilizers, name="stabilizers"),
+  path('discover/pcbs', views.pcbs, name="pcbs"),
 ]

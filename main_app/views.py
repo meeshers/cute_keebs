@@ -93,10 +93,30 @@ def discover(request):
   keycaps = Keycap.objects.all()
   pcbs = PCB.objects.all()
   stabilizers = Stabilizer.objects.all()
-  context = {'switches':switches, 'cases': cases,'keycap': keycaps,'pcbs': pcbs,'stabilizers': stabilizers}
+  context = {'switches':switches, 'cases': cases,'keycaps': keycaps,'pcbs': pcbs,'stabilizers': stabilizers}
   return render(request, 'discover.html', context)
 
 def cases(request):
   cases = Case.objects.all()
   context = {'cases':cases }
   return render(request, 'parts/cases.html', context)
+
+def switches(request):
+  switches = Switch.objects.all()
+  context = {'switches':switches }
+  return render(request, 'parts/switches.html', context)
+
+def keycaps(request):
+  keycaps = Keycap.objects.all()
+  context = {'keycaps':keycaps }
+  return render(request, 'parts/keycaps.html', context)
+
+def stabilizers(request):
+  stabilizers = Stabilizer.objects.all()
+  context = {'stabilizers':stabilizers }
+  return render(request, 'parts/stabilizers.html', context)
+
+def pcbs(request):
+  pcbs = PCB.objects.all()
+  context = {'pcbs':pcbs }
+  return render(request, 'parts/pcbs.html', context)
