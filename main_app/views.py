@@ -20,9 +20,6 @@ def home(request):
 def tips(request):
   return render(request, 'tips.html')
 
-def discover(request):
-  return render(request, 'discover.html')
-
 #sign up/register
 def signup(request):
   error_message = ''
@@ -53,6 +50,7 @@ def profile(request):
   context = {"keyboards":keyboards}
   return render(request, 'profile.html',context)
 
+### KEYBOARD CRUD ###
 @login_required
 def keyboard_view(request, keyboard_id):
   keyboard = Keyboard.objects.get(id=keyboard_id)
@@ -87,3 +85,18 @@ def keyboard_edit(request, keyboard_id):
     edit_keyboard = EditKeyboard(instance=keyboard)
   context={'keyboard':keyboard, 'edit_keyboard': edit_keyboard}
   return render(request, 'keyboard/edit.html',context)
+
+### PARTS SHOW PAGE ROUTES ###
+def discover(request):
+  switches = Switch.objects.all()
+  cases = Case.objects.all()
+  keycaps = Keycap.objects.all()
+  pcbs = PCB.objects.all()
+  stabilizers = Stabilizer.objects.all()
+  context = {'switches':switches, 'cases': cases,'keycap': keycaps,'pcbs': pcbs,'stabilizers': stabilizers}
+  return render(request, 'discover.html', context)
+
+def cases(request):
+  cases = Case.objects.all()
+  context = {'cases':cases }
+  return render(request, 'parts/cases.html', context)

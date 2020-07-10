@@ -5,5 +5,67 @@
 {% endblock %}
 
 {% block content %}
-<h1>Discover page</h1>
+<h1>Discover parts</h1>
+
+<!-- Cases -->
+<div>
+  <h2>Cases</h2>
+  {% for case in cases %}
+  <a href="">
+    <div>
+      {{case.name}}
+    </div>
+  </a>
+  {% endfor %}
+  <a href="{% url 'cases' %}">See more...</a>
+</div>
+
+<!-- Switches -->
+<div>
+  <h2>Switches</h2>
+  {% for switch in switches %}
+  <a href="">
+    <div>
+      {{switch.name}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<!-- Keycaps -->
+<div>
+  <h2>Keycaps</h2>
+  {% for keycap in keycaps %}
+  <a href="">
+    <div>
+      {{keycap.name}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<!-- Stabilizers -->
+<div>
+  <h2>Stabilizers</h2>
+  {% for stabilizer in stabilizers %}
+  <a href="">
+    <div>
+      {{stabilizer.name}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<!-- PCBs -->
+<div>
+  <h2>PCBs</h2>
+  {% for pcb in pcbs %}
+  <a href="">
+    <div>
+      {{pcb.name}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
 {% endblock %}
