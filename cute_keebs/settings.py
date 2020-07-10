@@ -125,5 +125,6 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'main_app.CustomUser'
 
 LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/profile'
 
 CRISPY_TEMPLATE_PACK = 'semantic-ui'

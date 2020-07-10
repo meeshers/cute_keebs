@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm
 from django.db import models
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser
@@ -6,7 +7,7 @@ from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser
 class CustomUserForm(UserCreationForm):
   class Meta:
     model = CustomUser
-    fields = ('full_name', 'username', 'email')
+    fields = ['username', 'full_name','email']
 
 class CreateKeyboard(forms.ModelForm):
   class Meta:

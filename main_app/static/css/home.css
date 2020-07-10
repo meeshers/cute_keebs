@@ -1,3 +1,7 @@
+body {
+  background-color: #F0F0F0;
+}
+
 img {
   opacity: 50%;
 }
@@ -7,5 +11,41 @@ img {
 }
 
 .logo {
-  color: #1f1f1f;
+  color: #888888;
+}
+.logo:hover {
+  color: #706C61;
+}
+
+.intro {
+  position: absolute;
+  top: 35%;
+  left: 26%;
+  background-color: rgba(224, 224, 224, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.ui.menu {
+  background-color: #FFE8DF;
+}
+.ui.menu .item {
+  color: #888888;
+}
+
+footer {
+  background-color: #888888;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
+
+hr {
+  border: 2px solid #84A9AC;
+}
+
+li {
+  list-style-type: none;
 }
