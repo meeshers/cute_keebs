@@ -41,4 +41,36 @@ def signup(request):
 
 @login_required
 def profile(request):
-  return render(request, 'profile.html')
+  if request.method == 'POST':
+    keyboard_form = CreateKeyboard(request.POST)
+    if keyboard_form.is_valid():
+      keyboard = keyboard_form.save(commit=False)
+      keyboard.user = request.user
+      keyboard.save()
+    return redirect('profile')
+  else:
+      keyboards = Keyboard.objects.all().filter(user=request.user.id)
+  context = {"keyboards":keyboards}
+  return render(request, 'profile.html',context)
+
+@login_required
+def keyboard_view(request, keyboard_id):
+  keyboard = Keyboard.objects.get(id=keyboard_id)
+  context = {'keyboard':keyboard}
+  return render(request, 'keyboard/show.html', context)
+
+@login_required
+def create_keyboard(request):
+  keyboard_form = CreateKeyboard(request.POST)
+  if keyboard_form.is_valid():
+    keyboard = keyboard_form.save(commit=False)
+    keyboard.user = request.user
+    keyboard.save()
+  context = {'keyboard_form': keyboard_form}
+  return render(request,'keyboard/create.html', context)
+
+@login_required
+def keyboard_delete(request, keyboard_id):
+  keyboard = Keyboard.objects.get(id=keyboard_id)
+  keyboard.delete()
+  return redirect('profile')

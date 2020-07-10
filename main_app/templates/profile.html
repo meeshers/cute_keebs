@@ -5,5 +5,28 @@
 {% endblock %}
 
 {% block content %}
-<h1>Profile page</h1>
+<h1>Welcome!</h1>
+
+<a href="{% url 'create_keyboard' %}">Create keyboard</a>
+
+<h2>Owned Keyboards</h2>
+<div class="owned-keyboards">
+  {% for keyboard in keyboards %}
+    {% if keyboard.status == 'O' %}
+      <a href="{% url 'show' keyboard.id %}">{{keyboard.name}}</a>
+      <br>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<h2>Dream Keyboards</h2>
+<div class="dream-keyboards">
+  {% for keyboard in keyboards %}
+    {% if keyboard.status == 'B' %}
+     <a href="{% url 'show' keyboard.id %}">{{keyboard.name}}</a>
+     <br>
+    {% endif %}
+  {% endfor %}
+</div>
+
 {% endblock %}

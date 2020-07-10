@@ -104,13 +104,20 @@ class Stabilizer(models.Model):
   def __str__(self):
     return self.name
 
+# determine if owned/want to build
+STATUS = (
+  ('O', "Owned"),
+  ('B', "Want to build")
+)
+
 class Keyboard(models.Model):
   name = models.CharField(max_length=50)
-  case = models.OneToOneField(Case, on_delete=models.CASCADE)
-  switch = models.OneToOneField(Switch, on_delete=models.CASCADE)
-  pcb = models.OneToOneField(PCB, on_delete=models.CASCADE)
-  stabilizer = models.OneToOneField(Stabilizer, on_delete=models.CASCADE)
-  keycap = models.OneToOneField(Keycap, on_delete=models.CASCADE)
+  status = models.CharField(max_length=1, choices=STATUS, default=STATUS[0][0])
+  case = models.ManyToManyField(Case)
+  switch = models.ManyToManyField(Switch)
+  pcb = models.ManyToManyField(PCB)
+  stabilizer = models.ManyToManyField(Stabilizer)
+  keycap = models.ManyToManyField(Keycap)
   user = models.ForeignKey(CustomUser, on_delete = models.CASCADE)
   description = models.TextField(max_length=1000)
 

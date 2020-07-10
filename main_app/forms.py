@@ -12,7 +12,7 @@ class CustomUserForm(UserCreationForm):
 class CreateKeyboard(forms.ModelForm):
   class Meta:
     model = Keyboard
-    fields = ['name', 'case', 'switch', 'pcb', 'stabilizer', 'keycap', 'description']
+    fields = ['name','status', 'case', 'switch', 'pcb', 'stabilizer', 'keycap', 'description']
 
 # forms for stretch goal
 class CreateSwitch(forms.ModelForm):
