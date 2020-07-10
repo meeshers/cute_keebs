@@ -86,7 +86,7 @@ def keyboard_edit(request, keyboard_id):
   context={'keyboard':keyboard, 'edit_keyboard': edit_keyboard}
   return render(request, 'keyboard/edit.html',context)
 
-### PARTS SHOW PAGE ROUTES ###
+### PARTS PAGES ROUTES ###
 def discover(request):
   switches = Switch.objects.all()
   cases = Case.objects.all()
@@ -120,3 +120,29 @@ def pcbs(request):
   pcbs = PCB.objects.all()
   context = {'pcbs':pcbs }
   return render(request, 'parts/pcbs.html', context)
+
+### PARTS SHOW PAGES ROUTES ###
+def case(request, case_id):
+  case = Case.objects.get(id=case_id)
+  context = {'case':case}
+  return render(request, 'parts/show/case.html', context)
+
+def switch(request, switch_id):
+  switch = Switch.objects.get(id=switch_id)
+  context = {'switch':switch}
+  return render(request, 'parts/show/switch.html', context)
+
+def keycap(request, keycap_id):
+  keycap = Keycap.objects.get(id=keycap_id)
+  context = {'keycap':keycap}
+  return render(request, 'parts/show/keycap.html', context)
+
+def stabilizer(request, stabilizer_id):
+  stabilizer = Stabilizer.objects.get(id=stabilizer_id)
+  context = {'stabilizer':stabilizer}
+  return render(request, 'parts/show/stabilizer.html', context)
+
+def pcb(request, pcb_id):
+  pcb = PCB.objects.get(id=pcb_id)
+  context = {'pcb':pcb}
+  return render(request, 'parts/show/pcb.html', context)

@@ -20,4 +20,11 @@ urlpatterns = [
   path('discover/keycaps', views.keycaps, name="keycaps"),
   path('discover/stabilizers', views.stabilizers, name="stabilizers"),
   path('discover/pcbs', views.pcbs, name="pcbs"),
+
+  # keyboard show part routes
+  path('discover/cases/<int:case_id>', views.case, name="case"),
+  path('discover/switches/<int:switch_id>', views.switch, name="switch"),
+  path('discover/keycaps/<int:keycap_id>', views.keycap, name="keycap"),
+  path('discover/stabilizers/<int:stabilizer_id>', views.stabilizer, name="stabilizer"),
+  path('discover/pcbs/<int:pcb_id>', views.pcb, name="pcb"),
 ]
