@@ -9,5 +9,6 @@ urlpatterns = [
   path('signup/', views.signup, name='signup'),
   path('keyboard/<int:keyboard_id>', views.keyboard_view, name="show"),
   path('create-keyboard', views.create_keyboard, name='create_keyboard'),
-  path('delete_keyboard/<int:keyboard_id>', views.keyboard_delete, name='keyboard_delete'),
+  path('delete-keyboard/<int:keyboard_id>', views.keyboard_delete, name='keyboard_delete'),
+  path('edit-keyboard/<int:keyboard_id>', views.keyboard_edit, name="edit_keyboard")
 ]

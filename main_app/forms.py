@@ -14,6 +14,11 @@ class CreateKeyboard(forms.ModelForm):
     model = Keyboard
     fields = ['name','status', 'case', 'switch', 'pcb', 'stabilizer', 'keycap', 'description']
 
+class EditKeyboard(forms.ModelForm):
+  class Meta:
+    model = Keyboard
+    fields = ['name','status', 'case', 'switch', 'pcb', 'stabilizer', 'keycap', 'description']
+
 # forms for stretch goal
 class CreateSwitch(forms.ModelForm):
   class Meta:

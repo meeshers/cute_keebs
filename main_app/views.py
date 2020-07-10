@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 
 # forms
-from .forms import CustomUserForm, CreateKeyboard
+from .forms import CustomUserForm, CreateKeyboard, EditKeyboard
 
 # models
 from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser
@@ -74,3 +74,16 @@ def keyboard_delete(request, keyboard_id):
   keyboard = Keyboard.objects.get(id=keyboard_id)
   keyboard.delete()
   return redirect('profile')
+
+@login_required
+def keyboard_edit(request, keyboard_id):
+  keyboard = Keyboard.objects.get(id=keyboard_id)
+  if request.method == 'POST':
+    edit_keyboard = EditKeyboard(request.POST, instance=keyboard)
+    if edit_keyboard.is_valid():
+      edit_keyboard.save()
+      return redirect('show', keyboard_id=keyboard_id)
+  else:
+    edit_keyboard = EditKeyboard(instance=keyboard)
+  context={'keyboard':keyboard, 'edit_keyboard': edit_keyboard}
+  return render(request, 'keyboard/edit.html',context)

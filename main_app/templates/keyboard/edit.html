@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Edit {{keyboard.name}}</title>
+{% endblock %}
+
+{% block content %}
+<p>edit page</p>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ edit_keyboard.as_p }}
+
+  <button type="submit">Update</button>
+</form>
+{% endblock %}
