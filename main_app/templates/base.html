@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
 
   {% block title%}
   <!-- Title goes here -->
@@ -18,7 +19,7 @@
 <body>
   <div class="ui menu">
     <div class="header item">
-      <a href="{% url 'home' %}"><i class="keyboard outline icon"></i></a>
+      <a class="logo" href="{% url 'home' %}"><i class="keyboard outline icon"></i> Keeb Dreams</a>
     </div>
     <div class="right menu">
       <a class="item" href="{% url 'discover' %}">
