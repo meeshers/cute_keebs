@@ -1,0 +1,56 @@
+[
+  {
+    "model": "main_app.switch",
+    "fields": {
+      "name": "Cherry MX Black",
+      "switch_type": "LI",
+      "description": "They have a medium to high actuation force, at 60 cN, which means they are the stiffest of the four most common Cherry switches. These switches are used in point-of-sale stations, but typically aren’t considered ideal for typing due to their high weighting. They have found use in RTS video games, where the high weighting can prevent accidental key presses that might occur on less stiff switches. The stronger spring also means that they rebound faster, meaning they can be actuated quite quickly given enough force – although you may also find fatigue becomes more of a factor than with other switches.",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41dQcbgM7DL._AC_SY400_.jpg"
+    }
+  },
+  {
+    "model": "main_app.switch",
+    "fields": {
+      "name": "Cherry MX Red",
+      "switch_type": "LI",
+      "description": "They have a low actuation force, at 45 cN – tied with Brown for the lowest of the four most common switches. Red switches have been marketed as a gaming switch, with the light weighting allowing for more rapid actuation, and have become increasingly common in gaming keyboards.",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51FlL2ZlCYL._AC_SL1000_.jpg"
+    }
+  },
+  {
+    "model": "main_app.switch",
+    "fields": {
+      "name": "Cherry MX Brown",
+      "switch_type": "TA",
+      "description": "The most popular type of tactile, non-clicky switch is the Cherry MX Brown. The switch is a good middle-of-the-road option appropriate for both typing and gaming. They are also ideal for typing in office environments, where a clicky switch might annoy some.",
+      "image": "https://cdn2.bigcommerce.com/server500/d90a4/products/1887/images/13836/CHERRY-MX-BROWN-SWITCH__76819.1536695815.1280.1280.jpg?c=2"
+    }
+  },
+  {
+    "model": "main_app.switch",
+    "fields": {
+      "name": "Cherry MX Blue",
+      "switch_type": "TA",
+      "description": "Clicky switches add a deliberately louder ‘click’ sound to the existing tactile bump, allowing for greater typing feedback. This makes it easier to know that you’ve hit the activation point. Blue switches are favoured by typists due to their tactile bump and audible click, but can be less suitable for gaming as the weighting is relatively high – 50 cN – and it is a bit harder to double tap, as the release point is above the actuation point. Blue switches are noticeably louder than other mechanical switches, which are already louder than rubber domes, so these switches can be a bit disruptive in close working conditions.",
+      "image": "https://cdn2.bigcommerce.com/server500/d90a4/products/1886/images/13835/CHERRY-MX-BLUE-SWITCH__81349.1536695399.1280.1280.jpg?c=2"
+    }
+  },
+  {
+    "model": "main_app.switch",
+    "fields": {
+      "name": "Cherry MX Silver",
+      "switch_type": "LI",
+      "description": "A a shortened version of the MX Red switch, actuating at 1.2mm instead of 2mm and with a total travel of 3.4mm compared to 4mm.",
+      "image": "https://cdn2.bigcommerce.com/server500/d90a4/products/1884/images/13833/CHERRY-MX-SILVER-SWITCH__98301.1536692134.1280.1280.jpg?c=2"
+    }
+  },
+  {
+    "model": "main_app.switch",
+    "fields": {
+      "name": "Cherry MX Clear",
+      "switch_type": "TA",
+      "description": "A stiffer version of Brown switches, with a tactile bump and weighting of 65 cN.",
+      "image": "https://www.wasdkeyboards.com/media/wysiwyg/mkg/clear.jpg"
+    }
+  }
+]

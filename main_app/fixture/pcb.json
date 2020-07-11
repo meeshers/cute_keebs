@@ -1,0 +1,29 @@
+[
+  {
+    "model": "main_app.pcb",
+    "fields": {
+      "name": "DZ60RGB V2",
+      "pcb_type": "HS",
+      "description": "Hotswap PCB. Supports QMK firmware. Also has RGB per key.",
+      "image": "https://cdn.shopify.com/s/files/1/1473/3902/products/1_3bb66b8e-451e-411f-abfd-88eb850738c9_1800x1800.jpg?v=1584436876"
+    }
+  },
+  {
+    "model": "main_app.pcb",
+    "fields": {
+      "name": "GK64 RGB 60%",
+      "pcb_type": "HS",
+      "description": "Hotswap PCB. Supports QMK firmware. Also has RGB per key.",
+      "image": "https://cdn.shopify.com/s/files/1/1473/3902/products/3_d7702c80-2295-4fd4-8a7b-f0f4b82c161f_1800x1800.jpg?v=1584436604"
+    }
+  },
+  {
+    "model": "main_app.pcb",
+    "fields": {
+      "name": "KBD75 REV 2.0",
+      "pcb_type": "SL",
+      "description": "Requires soldering. Supports QMK firmware.",
+      "image": "https://cdn.shopify.com/s/files/1/1473/3902/products/3_fbf9e73e-4384-48a4-b834-46b10eeba5dc_1800x1800.jpg?v=1584436573"
+    }
+  }
+]

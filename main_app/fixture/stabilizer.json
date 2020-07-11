@@ -1,0 +1,20 @@
+[
+  {
+    "model": "main_app.stabilizer",
+    "fields": {
+      "name": "Cherry Screw-in Stabilizer",
+      "stab_type": "S",
+      "description": "60: 2U x4, 6.25U x1  104: 2U x7, OEM 7U wire x1",
+      "image": "https://cdn.shopify.com/s/files/1/1473/3902/products/1_7ae1f1af-059f-4d55-8e3f-74a17a974baa_1800x1800.jpg?v=1584437022"
+    }
+  },
+  {
+    "model": "main_app.stabilizer",
+    "fields": {
+      "name": "Cherry PCB-mount Stabilizer",
+      "stab_type": "P",
+      "description": "Includes 6.25U x1, 7U x1, 2U *7",
+      "image": "https://cdn.shopify.com/s/files/1/1473/3902/products/1_9bd0bc2e-528b-4acd-9888-c34b4d4ec720_1800x1800.jpg?v=1584436561"
+    }
+  }
+]

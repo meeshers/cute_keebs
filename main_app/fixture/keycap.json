@@ -1,0 +1,62 @@
+[
+  {
+    "model": "main_app.keycap",
+    "fields": {
+      "name": "Infinikey Strawberry Lemonade",
+      "material": "PBT",
+      "profile": "CH",
+      "description": "A set based off the delightfully fruity and fun flavors of one of summer's greatest drinks: Strawberry Lemonade. Designed by Dazon.",
+      "image": "https://cdn.shopify.com/s/files/1/1679/2319/products/infinikey-strawberry-lemonade_kit_core_590x.jpg?v=1593741424"
+    }
+  },
+  {
+    "model": "main_app.keycap",
+    "fields": {
+      "name": "Infinikey Port",
+      "material": "PBT",
+      "profile": "CH",
+      "description": "A keycap set inspired by the port wine jelly slice, a well-loved Australian dessert. Designed by Ashkeebs.",
+      "image": "https://cdn.shopify.com/s/files/1/1679/2319/products/Infinikey_Port_iron165_white_overhead_590x.png?v=1591213165"
+    }
+  },
+  {
+    "model": "main_app.keycap",
+    "fields": {
+      "name": "Infinikey Aether",
+      "material": "PBT",
+      "profile": "CH",
+      "description": "Using a deep navy-black as the foundation of Aether, it’s hugged by a gradient of red to violet with transitions of watermelon and dusty plum.  Universally flattering for dark and light keyboards, Aether is one of the first gradient themes for cherry profile.",
+      "image": "https://cdn.shopify.com/s/files/1/1679/2319/products/infinikey-aether_proto_overhead-2_9eb2b77b-2e1f-42f8-9f5e-a11db5a98534_720x.jpg?v=1591992212"
+    }
+  },
+  {
+    "model": "main_app.keycap",
+    "fields": {
+      "name": "Infinikey Comfy",
+      "material": "PBT",
+      "profile": "CH",
+      "description": "Coming soon",
+      "image": "https://cdn.shopify.com/s/files/1/1679/2319/products/infinikey-comfy_overhead_1024x1024.jpg?v=1593452858"
+    }
+  },
+  {
+    "model": "main_app.keycap",
+    "fields": {
+      "name": "Mito GMK Laser",
+      "material": "ABS",
+      "profile": "CH",
+      "description": "Round two of GMK Laser features all the bright lights, dark shadows, and ‘80s vibes you loved in round one, plus some key updates, including a streamlined base kit, expanded ISO and other layout support, and new offerings to push the aesthetic even further into the neon underworld. Dripping with futuristic colors and cultural references from the cyberpunk past, GMK Laser is crafted in Germany using custom Cherry tooling. The keycaps themselves are made of thick doubleshot ABS for longevity and strength.",
+      "image": "https://massdrop-s3.imgix.net/product-images/drop-mito-gmk-laser-custom-keycap-set/FP/16m2wLwoSaOBwBL0zh9q_Cyberdeck.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&q=70"
+    }
+  },
+  {
+    "model": "main_app.keycap",
+    "fields": {
+      "name": "GMK Sumi",
+      "material": "ABS",
+      "profile": "CH",
+      "description": "GMK Sumi is a Set, inspired by the japanese ink painting art - sumi-e ",
+      "image": "https://i.imgur.com/DT9LBKl.jpg"
+    }
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "model": "main_app.case",
+    "fields": {
+      "name": "Tofu65 Acrylic Keyboard Case",
+      "form_type": "65",
+      "material":"Frosted Acrylic",
+      "description": "Made out of frosted acrylic in a 65% form factor, it is perfect for those who want smaller than a TKL but still have arrow keys",
+      "image": "https://cdn.shopify.com/s/files/1/1473/3902/products/14_a624c99c-0591-4d63-a3d7-ae19262b786d_1800x1800.jpg?v=1584437099"
+    }
+  },
+  {
+    "model": "main_app.case",
+    "fields": {
+      "name": "Tofu60 E-white Case",
+      "form_type": "60",
+      "material":"Aluminum",
+      "description": "Made out of aluminum in a 60% form factor.",
+      "image": "https://cdn.shopify.com/s/files/1/1473/3902/products/4_fd8ed1ca-655a-4fbb-9827-3d0293613e52_1800x1800.jpg?v=1584436911"
+    }
+  },
+  {
+    "model": "main_app.case",
+    "fields": {
+      "name": "KBDFans75",
+      "form_type": "75",
+      "material":"Aluminum",
+      "description": "Made out of aluminum in a 75% form factor.",
+      "image": "https://cdn.shopify.com/s/files/1/1473/3902/products/product-image-477769438_1800x1800.jpg?v=1584436630"
+    }
+  },
+  {
+    "model": "main_app.case",
+    "fields": {
+      "name": "DROP CTRL case",
+      "form_type": "75",
+      "material":"Aluminum",
+      "description": "Made out of aluminum. This is a replacement case only! PCB is provided with the purchase of other DROP CTRL keyboards.",
+      "image": "https://massdrop-s3.imgix.net/product-images/drop-ctrl-aluminum-case/FP/FLKefhWSGKKSUHGNwBwR_CB5A6117-copy-page.jpg?auto=format&fm=jpg&fit=fill&w=820&h=547&bg=f0f0f0&dpr=1&q=70"
+    }
+  }
+]
