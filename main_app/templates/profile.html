@@ -7,28 +7,42 @@
 {% block content %}
 <h1>Welcome!</h1>
 <h2>How it works...</h2>
-<p>Please create a keyboard with its name, status, and description.  Aftewards, please edit it with the options provided!</p>
+<p>Please create a keyboard with its name, status, and description. Aftewards, please edit it with the options provided!
+</p>
 
 <a class="ui teal button" href="{% url 'create_keyboard' %}">Create keyboard</a>
 
 <h3>Owned Keyboards</h3>
 <div class="owned-keyboards">
   {% for keyboard in keyboards %}
-    {% if keyboard.status == 'O' %}
-      <a href="{% url 'show' keyboard.id %}">{{keyboard.name}}</a>
-      <br>
-    {% endif %}
+  {% if keyboard.status == 'O' %}
+  <div class="keyboard-card">
+    <a href="{% url 'show' keyboard.id %}" class="ui medium image">{{keyboard.name}}
+      {% if keyboard.keycap.first %}
+      <img src="{{keyboard.keycap.first.image}}" alt="" srcset="">
+      {% else %}
+      <img src="https://assets3.razerzone.com/xpQLMA117pPRYZvkU17ddE-vLLk=/767x511/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhe1%2Fh98%2F9011301384222%2Frazer-pbt-keycap-upgrade-set-mercury-white-gallery-hero-1500x1000.jpg" alt="" srcset="">
+      {% endif %}
+    </a>
+  </div>
+  {% endif %}
   {% endfor %}
 </div>
 
 <h3>Dream Keyboards</h3>
 <div class="dream-keyboards">
   {% for keyboard in keyboards %}
-    {% if keyboard.status == 'B' %}
-     <a href="{% url 'show' keyboard.id %}">{{keyboard.name}}</a>
-     {{keyboard}}
-     <br>
-    {% endif %}
+  {% if keyboard.status == 'B' %}
+  <div class="keyboard-card">
+    <a href="{% url 'show' keyboard.id %}" class="ui medium image">{{keyboard.name}}
+      {% if keyboard.keycap.first %}
+      <img src="{{keyboard.keycap.first.image}}" alt="" srcset="">
+      {% else %}
+      <img src="https://assets3.razerzone.com/xpQLMA117pPRYZvkU17ddE-vLLk=/767x511/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhe1%2Fh98%2F9011301384222%2Frazer-pbt-keycap-upgrade-set-mercury-white-gallery-hero-1500x1000.jpg" alt="" srcset="">
+      {% endif %}
+    </a>
+  </div>
+  {% endif %}
   {% endfor %}
 </div>
 

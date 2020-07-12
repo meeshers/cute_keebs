@@ -36,7 +36,8 @@ FORM_TYPE = (
   ('75', '75% (TKL)'),
   ('10', '100% (Full size)'),
   ('OR', 'Ortholinear'),
-  ('ER', 'Ergonomic')
+  ('ER', 'Ergonomic'),
+  ('DE', 'Default')
 )
 
 class Case(models.Model):
@@ -69,7 +70,7 @@ class Keycap(models.Model):
   material = models.CharField(max_length=3, choices=KEY_MATERIAL, default=KEY_MATERIAL[0][0])
   profile = models.CharField(max_length=2, choices=KEY_PROFILE, default=KEY_PROFILE[0][0])
   description = models.TextField(max_length=1000)
-  image = models.CharField(max_length=1000)
+  image = models.CharField(max_length=1000, default="https://assets3.razerzone.com/xpQLMA117pPRYZvkU17ddE-vLLk=/767x511/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhe1%2Fh98%2F9011301384222%2Frazer-pbt-keycap-upgrade-set-mercury-white-gallery-hero-1500x1000.jpg")
 
   def __str__(self):
     return self.name

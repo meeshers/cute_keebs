@@ -2,6 +2,15 @@
   {
     "model": "main_app.stabilizer",
     "fields": {
+      "name": "Default",
+      "stab_type": "S",
+      "description": "default",
+      "image": "https://assets3.razerzone.com/xpQLMA117pPRYZvkU17ddE-vLLk=/767x511/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhe1%2Fh98%2F9011301384222%2Frazer-pbt-keycap-upgrade-set-mercury-white-gallery-hero-1500x1000.jpg"
+    }
+  },
+  {
+    "model": "main_app.stabilizer",
+    "fields": {
       "name": "Cherry Screw-in Stabilizer",
       "stab_type": "S",
       "description": "60: 2U x4, 6.25U x1  104: 2U x7, OEM 7U wire x1",
