@@ -7,8 +7,15 @@
 {% block content %}
 <h1>{{keyboard.name}}</h1>
 
+<div class="ui small images">
+  <img src="{{keyboard.case.first.image}}" alt="" srcset="">
+  <img src="{{keyboard.switch.first.image}}" alt="" srcset="">
+  <img src="{{keyboard.pcb.first.image}}" alt="" srcset="">
+  <img src="{{keyboard.stabilizer.first.image}}" alt="" srcset="">
+  <img src="{{keyboard.keycap.first.image}}" alt="" srcset="">
+</div>
+
 <p>Case: {{keyboard.case.first}}</p>
-<img src="{{keyboard.case.first.image}}" alt="" srcset="">
 <p>Switch: {{keyboard.switch.first}}</p>
 <p>PCB: {{keyboard.pcb.first}}</p>
 <p>Stabilizer: {{keyboard.stabilizer.first}}</p>

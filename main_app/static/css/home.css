@@ -2,7 +2,7 @@ body {
   background-color: #F0F0F0;
 }
 
-img {
+.home {
   opacity: 50%;
 }
 
@@ -74,4 +74,20 @@ hr {
 
 .label {
   color: #204051;
+}
+
+.keyboards {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+}
+
+.keyboard-card {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.keyboard-card p {
+  font-size: 20px;
 }
