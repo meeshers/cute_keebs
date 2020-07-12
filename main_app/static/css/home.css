@@ -1,5 +1,6 @@
 body {
   background-color: #F0F0F0;
+  text-align: center;
 }
 
 .home {
@@ -76,18 +77,11 @@ hr {
   color: #204051;
 }
 
-.keyboards {
-  display: flex;
-  margin: 5px;
+.ui.special.cards {
   padding: 5px;
+  margin: 10px;
 }
 
-.keyboard-card {
-  padding: 5px;
-  margin: 5px;
-  text-align: center;
-}
-
-.keyboard-card p {
-  font-size: 20px;
+.ui.cards>.card>.content{
+  background-color: #E1F4F3;
 }
