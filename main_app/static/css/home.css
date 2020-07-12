@@ -46,3 +46,32 @@ hr {
   border: 2px solid #84A9AC;
 }
 
+.ui.modal {
+  width: 300px;
+  height: 500px;
+  text-align: center;
+}
+
+.ui.modal .header {
+  color: #888888;
+}
+
+.modal-body {
+  padding: 10px;
+  margin: 5px;
+}
+
+.ui.modal.login {
+  width: 300px;
+  height: 250px;
+}
+
+.modal-body input {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.label {
+  color: #204051;
+}

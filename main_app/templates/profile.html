@@ -6,10 +6,12 @@
 
 {% block content %}
 <h1>Welcome!</h1>
+<h2>How it works...</h2>
+<p>Please create a keyboard with its name, status, and description.  Aftewards, please edit it with the options provided!</p>
 
-<a href="{% url 'create_keyboard' %}">Create keyboard</a>
+<a class="ui teal button" href="{% url 'create_keyboard' %}">Create keyboard</a>
 
-<h2>Owned Keyboards</h2>
+<h3>Owned Keyboards</h3>
 <div class="owned-keyboards">
   {% for keyboard in keyboards %}
     {% if keyboard.status == 'O' %}
@@ -19,7 +21,7 @@
   {% endfor %}
 </div>
 
-<h2>Dream Keyboards</h2>
+<h3>Dream Keyboards</h3>
 <div class="dream-keyboards">
   {% for keyboard in keyboards %}
     {% if keyboard.status == 'B' %}

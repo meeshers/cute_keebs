@@ -13,6 +13,7 @@ from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser
 
 # Create your views here.
 def home(request):
+  error_message = ''
   form = CustomUserForm(request.POST)
   context = {'form': form}
   return render(request,'home.html', context)
@@ -64,6 +65,7 @@ def create_keyboard(request):
     keyboard = keyboard_form.save(commit=False)
     keyboard.user = request.user
     keyboard.save()
+    return redirect('edit_keyboard', keyboard_id)
   context = {'keyboard_form': keyboard_form}
   return render(request,'keyboard/create.html', context)
 

@@ -15,10 +15,10 @@
 
 <p>Description: {{keyboard.description}}</p>
 
-<a href="{% url 'edit_keyboard' keyboard.id %}">Edit</a>
+<a class="ui teal button" href="{% url 'edit_keyboard' keyboard.id %}">Edit</a>
 
 <form action="{% url 'keyboard_delete' keyboard.id %}" method="POST">
   {% csrf_token %}
-  <button type="submit">Delete</button>
+  <button class="ui teal button" type="submit">Delete</button>
 </form>
 {% endblock %}

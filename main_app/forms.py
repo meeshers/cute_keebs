@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, Select
 from django.db import models
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser
@@ -12,12 +12,19 @@ class CustomUserForm(UserCreationForm):
 class CreateKeyboard(forms.ModelForm):
   class Meta:
     model = Keyboard
-    fields = ['name','status', 'case', 'switch', 'pcb', 'stabilizer', 'keycap', 'description']
+    fields = ['name','status', 'description']
 
 class EditKeyboard(forms.ModelForm):
   class Meta:
     model = Keyboard
     fields = ['name','status', 'case', 'switch', 'pcb', 'stabilizer', 'keycap', 'description']
+    widgets = {
+      'case': Select(),
+      'switch': Select(),
+      'pcb': Select(),
+      'stabilizer': Select(),
+      'keycap': Select()
+    }
 
 # forms for stretch goal
 class CreateSwitch(forms.ModelForm):

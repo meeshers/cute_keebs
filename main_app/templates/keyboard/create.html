@@ -9,5 +9,6 @@
   {% csrf_token %}
   {{ keyboard_form.as_p }}
   <input type="submit" value="Add Keyboard">
+  <input type="hidden" name="next" value={{next}}>
 </form>
 {% endblock %}

@@ -49,27 +49,22 @@
   </div>
 
   <!-- log in modal -->
-  <div class="ui modal" id="login-form">
+  <div class="ui modal login" id="login-form">
     <i class="close icon"></i>
     <div class="header">
       Sign In
     </div>
-    <div>
+    <div class="modal-body">
       <form action="{% url 'login' %}" method="POST">
-        <!--           {% csrf_token %}
-          {{form.username.label}}
-          {{form.username}}
-          <br>
-          {{form.password1.label}}
-          {{form.password1}} -->
         {% if login_error_message %}
         <p> {{login_error_message}}</p>
         {% endif %}
         {% csrf_token %}
         <input type="text" name="username" placeholder="Enter user name" required>
+        <br>
         <input type="password" name="password" placeholder="Enter password" required>
         <div class="actions">
-          <input class="btn" type="submit" value="Signup">
+          <input class="ui teal button" type="submit" value="Signup">
           <input type="hidden" name="next" value={{next}}>
         </div>
     </div>
@@ -82,16 +77,17 @@
     <div class="header">
       Sign Up
     </div>
-    <div>
+    <div class="modal-body">
       <form action="{% url 'signup' %}" method="POST">
         {% csrf_token %}
         {% for field in form %}
-        {{field.label}}
+        <label class="label">{{field.label}}</label>
+        <br>
         {{field }}
         <br>
         {% endfor %}
         <div class="actions">
-          <input class="btn" type="submit" value="Signup">
+          <input class="ui teal button" type="submit" value="Signup">
           <input type="hidden" name="next" value={{next}}>
         </div>
     </div>
