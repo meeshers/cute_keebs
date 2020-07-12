@@ -26,6 +26,7 @@
   {% for keyboard in keyboards %}
     {% if keyboard.status == 'B' %}
      <a href="{% url 'show' keyboard.id %}">{{keyboard.name}}</a>
+     {{keyboard}}
      <br>
     {% endif %}
   {% endfor %}

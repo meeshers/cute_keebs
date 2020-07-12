@@ -18,13 +18,13 @@ class EditKeyboard(forms.ModelForm):
   class Meta:
     model = Keyboard
     fields = ['name','status', 'case', 'switch', 'pcb', 'stabilizer', 'keycap', 'description']
-    widgets = {
+"""     widgets = {
       'case': Select(),
       'switch': Select(),
       'pcb': Select(),
       'stabilizer': Select(),
       'keycap': Select()
-    }
+    } """
 
 # forms for stretch goal
 class CreateSwitch(forms.ModelForm):

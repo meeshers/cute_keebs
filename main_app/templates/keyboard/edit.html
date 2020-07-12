@@ -6,7 +6,7 @@
 
 {% block content %}
 <p>edit page</p>
-<form action="" method="POST">
+<form action="{% url 'edit_keyboard' keyboard.id %}" method="POST">
   {% csrf_token %}
   {{ edit_keyboard.as_p }}
 
