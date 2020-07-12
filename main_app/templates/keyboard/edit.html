@@ -5,11 +5,53 @@
 {% endblock %}
 
 {% block content %}
-<p>edit page</p>
-<form action="{% url 'edit_keyboard' keyboard.id %}" method="POST">
-  {% csrf_token %}
-  {{ edit_keyboard.as_p }}
+<div>
+  <form class="ui form" action="{% url 'edit_keyboard' keyboard.id %}" method="POST">
+    <h4 class="ui dividing header">
+      Edit Keyboard
+    </h4>
+    {% csrf_token %}
+    {{ edit_keyboard.as_p}}
 
-  <button type="submit">Update</button>
-</form>
+   <!--  <div class="fields">
+      <div class="seven wide field">
+        <label for="name">Name</label>
+        {{edit_keyboard.name}}
+      </div>
+      <div class="seven wide field">
+        <label for="status">Status</label>
+        {{edit_keyboard.status}}
+      </div>
+    </div>
+
+    <div class="fields">
+      <div class="ten wide field">
+        <label for="case">Case</label>
+        {{edit_keyboard.case}}
+      </div>
+      <div class="ten wide field">
+        <label for="switch">Switch</label>
+        {{edit_keyboard.switch}}
+      </div>
+      <div class="ten wide field">
+        <label for="pcb">PCB</label>
+        {{edit_keyboard.pcb}}
+      </div>
+      <div class="ten wide field">
+        <label for="case">Keycap</label>
+        {{edit_keyboard.keycap}}
+      </div>
+    </div>
+
+    <div class="fields">
+      <div class="field">
+        <label for="description">Description</label>
+        {{edit_keyboard.description}}
+      </div>
+    </div> -->
+
+    <input class="ui teal button" type="submit" value="Update">
+    <input type="hidden" name="next" value={{next}}>
+  </form>
+</div>
 {% endblock %}

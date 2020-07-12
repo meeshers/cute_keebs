@@ -5,80 +5,81 @@
 {% endblock %}
 
 {% block content %}
-<h1>Welcome!</h1>
-<h2>How it works...</h2>
-<p>Please create a keyboard with its name, status, and description. Afterwards, please edit it with the options
-  provided!
-</p>
+<div>
+  <h1 class="ui dividing header">Welcome!</h1>
+  <h2>How it works...</h2>
+  <p>Please create a keyboard with its name, status, and description. Afterwards, please edit it with the options
+    provided!
+  </p>
 
-<a class="ui teal button" href="{% url 'create_keyboard' %}">Create keyboard</a>
+  <a class="ui teal button" href="{% url 'create_keyboard' %}">Create keyboard</a>
 
-<h4 class="ui horizontal divider header">
-  <i class="keyboard outline icon"></i>
-  Owned Keyboards
-</h4>
-<div class="ui special cards">
-  {% for keyboard in keyboards %}
-  {% if keyboard.status == 'O' %}
-  <div class="card">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center ui two buttons">
-            <a href="{% url 'show' keyboard.id %}"class="ui inverted button">View</a>
-            <a href="{% url 'edit_keyboard' keyboard.id %}" class="ui inverted button">Edit</a>
-          </div>
-        </div>
-      </div>
-      {% if keyboard.keycap.first %}
-      <img src="{{keyboard.keycap.first.image}}" alt="" srcset="">
-      {% else %}
-      <img
-        src="https://assets3.razerzone.com/xpQLMA117pPRYZvkU17ddE-vLLk=/767x511/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhe1%2Fh98%2F9011301384222%2Frazer-pbt-keycap-upgrade-set-mercury-white-gallery-hero-1500x1000.jpg"
-        alt="" srcset="">
-      {% endif %}
-    </div>
-    <div class="content">
-      <a href="{% url 'show' keyboard.id %}" class="header">{{keyboard.name}}</a>
-    </div>
-  </div>
-  {% endif %}
-  {% endfor %}
-</div>
-
-<h4 class="ui horizontal divider header">
-  <i class="keyboard outline icon"></i>
-  Dream Keyboards
-</h4>
-<div class="ui special cards">
-  {% for keyboard in keyboards %}
-  {% if keyboard.status == 'B' %}
-  <div class="card">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
+  <h4 class="ui horizontal divider header">
+    <i class="keyboard outline icon"></i>
+    Owned Keyboards
+  </h4>
+  <div class="ui special cards">
+    {% for keyboard in keyboards %}
+    {% if keyboard.status == 'O' %}
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
             <div class="center ui two buttons">
-              <a href="{% url 'show' keyboard.id %}"class="ui inverted button">View</a>
+              <a href="{% url 'show' keyboard.id %}" class="ui inverted button">View</a>
               <a href="{% url 'edit_keyboard' keyboard.id %}" class="ui inverted button">Edit</a>
             </div>
           </div>
         </div>
+        {% if keyboard.keycap.first %}
+        <img src="{{keyboard.keycap.first.image}}" alt="" srcset="">
+        {% else %}
+        <img
+          src="https://assets3.razerzone.com/xpQLMA117pPRYZvkU17ddE-vLLk=/767x511/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhe1%2Fh98%2F9011301384222%2Frazer-pbt-keycap-upgrade-set-mercury-white-gallery-hero-1500x1000.jpg"
+          alt="" srcset="">
+        {% endif %}
       </div>
-      {% if keyboard.keycap.first %}
-      <img src="{{keyboard.keycap.first.image}}" alt="" srcset="">
-      {% else %}
-      <img
-        src="https://assets3.razerzone.com/xpQLMA117pPRYZvkU17ddE-vLLk=/767x511/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhe1%2Fh98%2F9011301384222%2Frazer-pbt-keycap-upgrade-set-mercury-white-gallery-hero-1500x1000.jpg"
-        alt="" srcset="">
-      {% endif %}
+      <div class="content">
+        <a href="{% url 'show' keyboard.id %}" class="header">{{keyboard.name}}</a>
+      </div>
     </div>
-    <div class="content">
-      <a href="{% url 'show' keyboard.id %}" class="header">{{keyboard.name}}</a>
-    </div>
+    {% endif %}
+    {% endfor %}
   </div>
-  {% endif %}
-  {% endfor %}
-</div>
 
+  <h4 class="ui horizontal divider header">
+    <i class="keyboard outline icon"></i>
+    Dream Keyboards
+  </h4>
+  <div class="ui special cards">
+    {% for keyboard in keyboards %}
+    {% if keyboard.status == 'B' %}
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <div class="center ui two buttons">
+                <a href="{% url 'show' keyboard.id %}" class="ui inverted button">View</a>
+                <a href="{% url 'edit_keyboard' keyboard.id %}" class="ui inverted button">Edit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if keyboard.keycap.first %}
+        <img src="{{keyboard.keycap.first.image}}" alt="" srcset="">
+        {% else %}
+        <img
+          src="https://assets3.razerzone.com/xpQLMA117pPRYZvkU17ddE-vLLk=/767x511/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhe1%2Fh98%2F9011301384222%2Frazer-pbt-keycap-upgrade-set-mercury-white-gallery-hero-1500x1000.jpg"
+          alt="" srcset="">
+        {% endif %}
+      </div>
+      <div class="content">
+        <a href="{% url 'show' keyboard.id %}" class="header">{{keyboard.name}}</a>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

@@ -7,69 +7,100 @@
 {% block content %}
 <h1>Discover parts</h1>
 
-<!-- Cases -->
-<div>
-  <h2>Cases</h2>
-  {% for case in cases %}
-  <a href="">
-    <div>
-      {{case.name}}
+<div class="discover">
+  <!-- Cases -->
+  <div class="ui special cards">
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <a href="{% url 'cases' %}" class="ui inverted button">View</a>
+            </div>
+          </div>
+        </div>
+        <img src="{{cases.first.image}}" alt="" srcset="">
+      </div>
+      <div class="content">
+        <a href="{% url 'cases' %}" class="header">View Cases</a>
+      </div>
     </div>
-  </a>
-  {% endfor %}
-  <a href="{% url 'cases' %}">See more...</a>
-</div>
+  </div>
 
-<!-- Switches -->
-<div>
-  <h2>Switches</h2>
-  {% for switch in switches %}
-  <a href="">
-    <div>
-      {{switch.name}}
+  <!-- Switches -->
+  <div class="ui special cards">
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <a href="{% url 'switches' %}" class="ui inverted button">View</a>
+            </div>
+          </div>
+        </div>
+        <img src="{{switches.first.image}}" alt="" srcset="">
+      </div>
+      <div class="content">
+        <a href="{% url 'switches' %}" class="header">View Switches</a>
+      </div>
     </div>
-  </a>
-  {% endfor %}
-  <a href="{% url 'switches' %}">See more...</a>
-</div>
+  </div>
 
-<!-- Keycaps -->
-<div>
-  <h2>Keycaps</h2>
-  {% for keycap in keycaps %}
-  <a href="">
-    <div>
-      {{keycap.name}}
+  <!-- Keycaps -->
+  <div class="ui special cards">
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <a href="{% url 'keycaps' %}" class="ui inverted button">View</a>
+            </div>
+          </div>
+        </div>
+        <img src="{{keycaps.first.image}}" alt="" srcset="">
+      </div>
+      <div class="content">
+        <a href="{% url 'keycaps' %}" class="header">View Keycaps</a>
+      </div>
     </div>
-  </a>
-  {% endfor %}
-  <a href="{% url 'keycaps' %}">See more...</a>
-</div>
+  </div>
 
-<!-- Stabilizers -->
-<div>
-  <h2>Stabilizers</h2>
-  {% for stabilizer in stabilizers %}
-  <a href="">
-    <div>
-      {{stabilizer.name}}
+  <!-- Stabilizers -->
+  <div class="ui special cards">
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <a href="{% url 'stabilizers' %}" class="ui inverted button">View</a>
+            </div>
+          </div>
+        </div>
+        <img src="{{stabilizers.first.image}}" alt="" srcset="">
+      </div>
+      <div class="content">
+        <a href="{% url 'stabilizers' %}" class="header">View Stabilizers</a>
+      </div>
     </div>
-  </a>
-  {% endfor %}
-  <a href="{% url 'stabilizers' %}">See more...</a>
-</div>
+  </div>
 
-<!-- PCBs -->
-<div>
-  <h2>PCBs</h2>
-  {% for pcb in pcbs %}
-  <a href="">
-    <div>
-      {{pcb.name}}
+  <!-- PCBs -->
+  <div class="ui special cards">
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="center">
+              <a href="{% url 'pcbs' %}" class="ui inverted button">View</a>
+            </div>
+          </div>
+        </div>
+        <img src="{{pcbs.first.image}}" alt="" srcset="">
+      </div>
+      <div class="content">
+        <a href="{% url 'pcbs' %}" class="header">View PCBs</a>
+      </div>
     </div>
-  </a>
-  {% endfor %}
-  <a href="{% url 'pcbs' %}">See more...</a>
+  </div>
 </div>
-
 {% endblock %}

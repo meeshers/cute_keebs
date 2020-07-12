@@ -5,10 +5,33 @@
 {% endblock %}
 
 {% block content %}
-<form action="{% url 'profile' %}" method="POST">
-  {% csrf_token %}
-  {{ keyboard_form.as_p }}
-  <input type="submit" value="Add Keyboard">
-  <input type="hidden" name="next" value={{next}}>
-</form>
+<div>
+  <form class="ui form" action="{% url 'profile' %}" method="POST">
+    <h4 class="ui dividing header">
+      Create Keyboard
+    </h4>
+    {% csrf_token %}
+
+    <div class="fields">
+      <div class="seven wide field">
+        <label for="name">Name</label>
+        {{keyboard_form.name}}
+      </div>
+      <div class="seven wide field">
+        <label for="status">Status</label>
+        {{keyboard_form.status}}
+      </div>
+    </div>
+
+    <div class="fields">
+      <div class="field">
+        <label for="description">Description</label>
+        {{keyboard_form.description}}
+      </div>
+    </div>
+
+    <input class="ui teal button" type="submit" value="Add Keyboard">
+    <input type="hidden" name="next" value={{next}}>
+  </form>
+</div>
 {% endblock %}

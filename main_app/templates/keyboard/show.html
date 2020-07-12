@@ -5,61 +5,66 @@
 {% endblock %}
 
 {% block content %}
-<h1>{{keyboard.name}}</h1>
+<div>
+  <h1 class="ui dividing header">
+    {{keyboard.name}}
+  </h1>
 
-<div class="ui small images">
-  <img src="{{keyboard.case.first.image}}" alt="" srcset="">
-  <img src="{{keyboard.switch.first.image}}" alt="" srcset="">
-  <img src="{{keyboard.pcb.first.image}}" alt="" srcset="">
-  <img src="{{keyboard.stabilizer.first.image}}" alt="" srcset="">
-  <img src="{{keyboard.keycap.first.image}}" alt="" srcset="">
-</div>
 
-<h4 class="ui horizontal divider header">
-  <i class="tag icon"></i>
-  Description
-</h4>
-<p>{{keyboard.description}}</p>
-
-<h4 class="ui horizontal divider header">
-  <i class="bar chart icon"></i>
-  Specifications
-</h4>
-
-<table class="ui definition table">
-  <tbody>
-    <tr>
-      <td class="two wide column">Case:</td>
-      <td>{{keyboard.case.first}}</td>
-    </tr>
-    <tr>
-      <td class="two wide column">Switch:</td>
-      <td>{{keyboard.switch.first}}</td>
-    </tr>
-    <tr>
-      <td class="two wide column">PCB:</td>
-      <td>{{keyboard.pcb.first}}</td>
-    </tr>
-    <tr>
-      <td class="two wide column">Stabilizer:</td>
-      <td>{{keyboard.stabilizer.first}}</td>
-    </tr>
-    <tr>
-      <td class="two wide column">Keycap:</td>
-      <td>{{keyboard.keycap.first}}</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="buttons">
-  <div>
-    <a class="ui teal button" href="{% url 'edit_keyboard' keyboard.id %}">Edit</a>
+  <div class="ui small images">
+    <img src="{{keyboard.case.first.image}}" alt="" srcset="">
+    <img src="{{keyboard.switch.first.image}}" alt="" srcset="">
+    <img src="{{keyboard.pcb.first.image}}" alt="" srcset="">
+    <img src="{{keyboard.stabilizer.first.image}}" alt="" srcset="">
+    <img src="{{keyboard.keycap.first.image}}" alt="" srcset="">
   </div>
-  <div>
-    <form action="{% url 'keyboard_delete' keyboard.id %}" method="POST">
-      {% csrf_token %}
-      <button class="ui teal button" type="submit">Delete</button>
-    </form>
+
+  <h4 class="ui horizontal divider header">
+    <i class="tag icon"></i>
+    Description
+  </h4>
+  <p>{{keyboard.description}}</p>
+
+  <h4 class="ui horizontal divider header">
+    <i class="bar chart icon"></i>
+    Specifications
+  </h4>
+
+  <table class="ui definition table">
+    <tbody>
+      <tr>
+        <td class="two wide column">Case:</td>
+        <td>{{keyboard.case.first}}</td>
+      </tr>
+      <tr>
+        <td class="two wide column">Switch:</td>
+        <td>{{keyboard.switch.first}}</td>
+      </tr>
+      <tr>
+        <td class="two wide column">PCB:</td>
+        <td>{{keyboard.pcb.first}}</td>
+      </tr>
+      <tr>
+        <td class="two wide column">Stabilizer:</td>
+        <td>{{keyboard.stabilizer.first}}</td>
+      </tr>
+      <tr>
+        <td class="two wide column">Keycap:</td>
+        <td>{{keyboard.keycap.first}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="buttons">
+    <div>
+      <a class="ui teal button" href="{% url 'edit_keyboard' keyboard.id %}">Edit</a>
+    </div>
+    <div>
+      <form action="{% url 'keyboard_delete' keyboard.id %}" method="POST">
+        {% csrf_token %}
+        <button class="ui teal button" type="submit">Delete</button>
+      </form>
+    </div>
   </div>
 </div>
 {% endblock %}

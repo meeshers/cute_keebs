@@ -3,6 +3,10 @@ body {
   text-align: center;
 }
 
+.ui.menu {
+  margin: 0;
+}
+
 .home {
   opacity: 50%;
 }
@@ -35,12 +39,13 @@ body {
   color: #888888;
 }
 
-footer {
+.footer {
   background-color: #888888;
   color: white;
   text-align: center;
   position: relative;
   padding: 10px;
+  bottom: 0;
 }
 
 hr {
@@ -113,4 +118,26 @@ hr {
   justify-content: center;
   padding: 10px;
   margin: 10px;
+}
+
+.ui.form {
+  padding: 10px;
+  margin: 15px;
+}
+
+.fields {
+  justify-content: center;
+}
+
+.ui.form textarea {
+  width: 800px;
+}
+
+.ui.header:first-child  {
+  padding-top: 20px;
+}
+
+.discover {
+  display: flex;
+  flex-wrap: wrap;
 }
