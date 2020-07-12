@@ -60,9 +60,13 @@
         <p> {{login_error_message}}</p>
         {% endif %}
         {% csrf_token %}
-        <input type="text" name="username" placeholder="Enter user name" required>
-        <br>
-        <input type="password" name="password" placeholder="Enter password" required>
+        <div class="ui input">
+          <input type="text" name="username" placeholder="Enter user name" required>
+        </div>
+        <div class="ui input">
+          <input type="password" name="password" placeholder="Enter password" required>
+        </div>
+
         <div class="actions">
           <input class="ui teal button" type="submit" value="Signup">
           <input type="hidden" name="next" value={{next}}>
@@ -83,7 +87,9 @@
         {% for field in form %}
         <label class="label">{{field.label}}</label>
         <br>
-        {{field }}
+        <div class="ui input">
+          {{field }}
+        </div>
         <br>
         {% endfor %}
         <div class="actions">

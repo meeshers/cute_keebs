@@ -47,6 +47,14 @@ hr {
   border: 2px solid #84A9AC;
 }
 
+.ui.teal.button {
+  background-color: #3B6978;
+}
+
+.ui.teal.button:hover {
+  background-color: #84A9AC;
+}
+
 .ui.modal {
   width: 300px;
   height: 500px;
@@ -73,6 +81,10 @@ hr {
   border-radius: 5px;
 }
 
+.ui.input {
+  margin: 5px;
+}
+
 .label {
   color: #204051;
 }
@@ -84,4 +96,21 @@ hr {
 
 .ui.cards>.card>.content{
   background-color: #E1F4F3;
+}
+
+.ui.definition.table{
+  width: 750px;
+  margin: 0 auto;
+}
+
+.ui.definition.table tr td:first-child:not(.ignored) {
+  background-color: #FFE8DF;
+  color: #706C61;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
 }

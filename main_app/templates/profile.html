@@ -13,7 +13,10 @@
 
 <a class="ui teal button" href="{% url 'create_keyboard' %}">Create keyboard</a>
 
-<h3>Owned Keyboards</h3>
+<h4 class="ui horizontal divider header">
+  <i class="keyboard outline icon"></i>
+  Owned Keyboards
+</h4>
 <div class="ui special cards">
   {% for keyboard in keyboards %}
   {% if keyboard.status == 'O' %}
@@ -43,7 +46,10 @@
   {% endfor %}
 </div>
 
-<h3>Dream Keyboards</h3>
+<h4 class="ui horizontal divider header">
+  <i class="keyboard outline icon"></i>
+  Dream Keyboards
+</h4>
 <div class="ui special cards">
   {% for keyboard in keyboards %}
   {% if keyboard.status == 'B' %}
