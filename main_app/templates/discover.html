@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<h1>Discover parts</h1>
+<h1 class="ui dividing header">Discover Parts</h1>
 
 <div class="discover">
   <!-- Cases -->
@@ -19,7 +19,9 @@
             </div>
           </div>
         </div>
-        <img src="{{cases.first.image}}" alt="" srcset="">
+        <img
+          src="https://cdn.shopify.com/s/files/1/1473/3902/products/5689ad8cf382a0b5e30109095f2c5cb5_ae04fd20-1f0c-490a-8860-56dec4cce43a_1800x1800.jpg?v=1584436794"
+          alt="" srcset="">
       </div>
       <div class="content">
         <a href="{% url 'cases' %}" class="header">View Cases</a>
@@ -38,7 +40,9 @@
             </div>
           </div>
         </div>
-        <img src="{{switches.first.image}}" alt="" srcset="">
+        <img
+          src="https://ae01.alicdn.com/kf/HTB1dqOsB8yWBuNkSmFPq6xguVXaG/8-Pcs-Original-Cherry-Mx-Switch-Mechanical-Keyboard-Switch-Silver-Mx-Brown-Blue-Red-Switch-3.jpg"
+          alt="" srcset="">
       </div>
       <div class="content">
         <a href="{% url 'switches' %}" class="header">View Switches</a>
@@ -57,7 +61,9 @@
             </div>
           </div>
         </div>
-        <img src="{{keycaps.first.image}}" alt="" srcset="">
+        <img
+          src="https://massdrop-s3.imgix.net/product-images/npkc-gradient-keycap-set/MD_71364_20181018_192812.png?bg=f0f0f0"
+          alt="" srcset="">
       </div>
       <div class="content">
         <a href="{% url 'keycaps' %}" class="header">View Keycaps</a>
@@ -76,7 +82,9 @@
             </div>
           </div>
         </div>
-        <img src="{{stabilizers.first.image}}" alt="" srcset="">
+        <img
+          src="https://cdn.shopify.com/s/files/1/1473/3902/products/4_9324bfd0-c419-47de-b077-8976f8a834f6_1800x1800.jpg?v=1592208661"
+          alt="" srcset="">
       </div>
       <div class="content">
         <a href="{% url 'stabilizers' %}" class="header">View Stabilizers</a>
@@ -95,7 +103,9 @@
             </div>
           </div>
         </div>
-        <img src="{{pcbs.first.image}}" alt="" srcset="">
+        <img
+          src="https://cdn.shopify.com/s/files/1/1473/3902/products/4_3ad41621-001d-4072-83fa-2bad1e001a72_1800x1800.jpg?v=1588233689"
+          alt="" srcset="">
       </div>
       <div class="content">
         <a href="{% url 'pcbs' %}" class="header">View PCBs</a>
@@ -103,4 +113,32 @@
     </div>
   </div>
 </div>
+
+<div class="ui segment">
+  <div class="ui two column very relaxed grid">
+    <div class="column">
+      <h1 class="ui dividing header">Discover Companies</h1>
+      <div class="ui list">
+        <a href="https://www.kbdfans.com" target="_blank" class="item">KBD Fans</a>
+        <a href="https://thekey.company/" target="_blank" class="item">The Key Company</a>
+        <a href="https://cannonkeys.com/" target="_blank" class="item">Cannon Keys</a>
+        <a href="https://dixiemech.com/" target="_blank" class="item">Dixie Mech</a>
+        <a href="https://drop.com/" target="_blank" class="item">Drop</a>
+      </div>
+      
+    </div>
+
+    <div class="column">
+      <h1 class="ui dividing header">Discover Communities</h1>
+      <div class="ui list">
+        <a href="https://geekhack.org/" target="_blank" class="item">Geekhack</a>
+        <a href="https://www.reddit.com/r/MechanicalKeyboards/" target="_blank" class="item">r/MechanicalKeyboards</a>
+        <a href="https://www.reddit.com/r/mechmarket/" target="_blank" class="item">r/mechmarket</a>
+        <a href="https://ckeys.org/" target="_blank" class="item">ckeys (Seattle)</a>
+        <a href="https://discord.com/invite/QMHNb4U" target="_blank" class="item">Cute Keyboard Club (Discord)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

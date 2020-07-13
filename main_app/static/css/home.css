@@ -140,4 +140,5 @@ hr {
 .discover {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
