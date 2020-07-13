@@ -182,3 +182,15 @@ hr {
   margin: 0 auto;
   margin-bottom: 20px;
 }
+
+.tools {
+  width: 900px;
+  margin: 0 auto;
+}
+.tool{
+  width: 33%;
+}
+.videos{
+  width: 900px;
+  margin: 0 auto;
+}
