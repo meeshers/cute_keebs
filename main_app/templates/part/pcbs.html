@@ -6,13 +6,30 @@
 
 {% block content %}
 <div>
-  <h2>PCBs</h2>
+  <h1 class="ui dividing header">PCB</h1>
+
   {% for pcb in pcbs %}
-  <a href="{% url 'pcb' pcb.id %}">
-    <div>
-      {{pcb.name}}
-    </div>
-  </a>
+  <div class="ui raised segment">
+    <a href="{% url 'pcb' pcb.id %}">
+      <h3 class="ui left floated header">{{pcb.name}}</h3>
+      <div class="ui clearing divider"></div>
+      <div class="show-container">
+        <div class="image">
+          <img src="{{pcb.image}}" alt="" class="ui medium image">
+        </div>
+        <div class="info">
+          <label for="pcb_type"><h4>PCB type:</h4> </label>
+          {%if pcb.pcb_type == 'SL' %}
+            Solder
+          {% elif pcb.pcb_type == 'HS'%}
+            Hotswap
+          {% endif %} <br>
+          <label for="description"><h4>Description:</h4> </label>{{pcb.description}}
+        </div>
+      </div>
+    </a>
+  </div>
   {% endfor %}
+
 </div>
 {% endblock %}

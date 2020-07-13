@@ -101,50 +101,50 @@ def discover(request):
 def cases(request):
   cases = Case.objects.all()
   context = {'cases':cases }
-  return render(request, 'parts/cases.html', context)
+  return render(request, 'part/cases.html', context)
 
 def switches(request):
   switches = Switch.objects.all()
   context = {'switches':switches }
-  return render(request, 'parts/switches.html', context)
+  return render(request, 'part/switches.html', context)
 
 def keycaps(request):
   keycaps = Keycap.objects.all()
   context = {'keycaps':keycaps }
-  return render(request, 'parts/keycaps.html', context)
+  return render(request, 'part/keycaps.html', context)
 
 def stabilizers(request):
   stabilizers = Stabilizer.objects.all()
   context = {'stabilizers':stabilizers }
-  return render(request, 'parts/stabilizers.html', context)
+  return render(request, 'part/stabilizers.html', context)
 
 def pcbs(request):
   pcbs = PCB.objects.all()
   context = {'pcbs':pcbs }
-  return render(request, 'parts/pcbs.html', context)
+  return render(request, 'part/pcbs.html', context)
 
 ### PARTS SHOW PAGES ROUTES ###
 def case(request, case_id):
   case = Case.objects.get(id=case_id)
   context = {'case':case}
-  return render(request, 'parts/show/case.html', context)
+  return render(request, 'part/show/case.html', context)
 
 def switch(request, switch_id):
   switch = Switch.objects.get(id=switch_id)
   context = {'switch':switch}
-  return render(request, 'parts/show/switch.html', context)
+  return render(request, 'part/show/switch.html', context)
 
 def keycap(request, keycap_id):
   keycap = Keycap.objects.get(id=keycap_id)
   context = {'keycap':keycap}
-  return render(request, 'parts/show/keycap.html', context)
+  return render(request, 'part/show/keycap.html', context)
 
 def stabilizer(request, stabilizer_id):
   stabilizer = Stabilizer.objects.get(id=stabilizer_id)
   context = {'stabilizer':stabilizer}
-  return render(request, 'parts/show/stabilizer.html', context)
+  return render(request, 'part/show/stabilizer.html', context)
 
 def pcb(request, pcb_id):
   pcb = PCB.objects.get(id=pcb_id)
   context = {'pcb':pcb}
-  return render(request, 'parts/show/pcb.html', context)
+  return render(request, 'part/show/pcb.html', context)

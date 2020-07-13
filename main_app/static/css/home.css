@@ -143,6 +143,29 @@ hr {
   justify-content: center;
 }
 
+.ui.raised.segment {
+  width: 800px;
+  justify-content: center;
+  margin: 15px auto;
+}
+
 .show-container {
   display: flex;
+  padding: 10px;
+  margin: 10px;
+}
+
+.show-container>.info {
+  padding-left: 25px;
+  color: #333333;
+  width: 400px;
+  text-align: left;
+}
+
+.image {
+  padding-top: 10px;
+}
+
+.info>label{
+  padding: 5px;
 }

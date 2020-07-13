@@ -9,20 +9,40 @@
   <h1 class="ui dividing header">Cases</h1>
 
   {% for case in cases %}
-  <div class="ui rasied segment">
-    <h3 class="ui left floated header">{{case.name}}</h3>
-    <div class="ui clearing divider"></div>
-    <div class="show-container">
-      <div class="image">
-        <img src="{{case.image}}" alt="" class="ui medium image">
+  <div class="ui raised segment">
+    <a href="{% url 'case' case.id %}">
+      <h3 class="ui left floated header">{{case.name}}</h3>
+      <div class="ui clearing divider"></div>
+      <div class="show-container">
+        <div class="image">
+          <img src="{{case.image}}" alt="" class="ui medium image">
+        </div>
+        <div class="info">
+          <label for="form_type"><h4>Form type:</h4> </label>
+          {%if case.form_type == '40' %}
+            40%
+          {% elif case.form_type == '60'%}
+            60%
+          {% elif case.form_type == '65'%}
+            65%
+          {% elif case.form_type == '75'%}
+            75%
+          {% elif case.form_type == '10'%}
+            Full Size
+          {% elif case.form_type == 'OR'%}
+            Ortholinear
+          {% elif case.form_type == 'ER'%}
+            Ergonomic
+          {% elif case.form_type == 'DE'%}
+            Default
+          {% endif %} <br>
+          <label for="material"><h4>Material:</h4></label>{{case.material}} <br>
+          <label for="description"><h4>Description:</h4> </label>{{case.description}}
+        </div>
       </div>
-      <div>
-        <p>{{case.form_type}}</p>
-        <p>{{case.material}}</p>
-        <p>{{case.description}}</p>
-      </div>
-    </div>
+    </a>
   </div>
   {% endfor %}
+
 </div>
 {% endblock %}

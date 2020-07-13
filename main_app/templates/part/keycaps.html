@@ -6,13 +6,39 @@
 
 {% block content %}
 <div>
-  <h2>Keycaps</h2>
-  {% for keycaps in keycaps %}
-  <a href="{% url 'keycap' keycap.id %}">
-    <div>
-      {{keycaps.name}}
-    </div>
-  </a>
+  <h1 class="ui dividing header">Keycaps</h1>
+
+  {% for keycap in keycaps %}
+  <div class="ui raised segment">
+    <a href="{% url 'keycap' keycap.id %}">
+      <h3 class="ui left floated header">{{keycap.name}}</h3>
+      <div class="ui clearing divider"></div>
+      <div class="show-container">
+        <div class="image">
+          <img src="{{keycap.image}}" alt="" class="ui medium image">
+        </div>
+        <div class="info">
+          <label for="form_type"><h4>Keycap profile:</h4> </label>
+          {%if keycap.profile == 'DS' %}
+            DSA profile
+          {% elif keycap.profile == 'SA'%}
+            SA profile
+          {% elif keycap.profile == 'OE'%}
+            OEM profile
+          {% elif keycap.profile == 'KT'%}
+            KAT profile
+          {% elif keycap.profile == 'CH'%}
+            Cherry profile
+          {% else %}
+            Default
+          {% endif %} <br>
+          <label for="material"><h4>Material:</h4></label>{{keycap.material}} <br>
+          <label for="description"><h4>Description:</h4> </label>{{keycap.description}}
+        </div>
+      </div>
+    </a>
+  </div>
   {% endfor %}
+
 </div>
 {% endblock %}

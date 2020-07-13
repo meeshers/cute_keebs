@@ -5,14 +5,29 @@
 {% endblock %}
 
 {% block content %}
-<div>
-  <h2>Stabilizers</h2>
+<h1 class="ui dividing header">Stabilizers</h1>
+
   {% for stabilizer in stabilizers %}
-  <a href="{% url 'stabilizer' stabilizer.id %}">
-    <div>
-      {{stabilizer.name}}
-    </div>
-  </a>
+  <div class="ui raised segment">
+    <a href="{% url 'stabilizer' stabilizer.id %}">
+      <h3 class="ui left floated header">{{stabilizer.name}}</h3>
+      <div class="ui clearing divider"></div>
+      <div class="show-container">
+        <div class="image">
+          <img src="{{stabilizer.image}}" alt="" class="ui medium image">
+        </div>
+        <div class="info">
+          <label for="stabilizer_type"><h4>Stabilizer type:</h4> </label>
+          {%if stabilizer.stab_type == 'S' %}
+            Screw-in Stabilizers
+          {% elif stabilizer.stab_type == 'P'%}
+            PCB-Mounted
+          {% endif %} <br>
+          <label for="description"><h4>Description:</h4> </label>{{stabilizer.description}}
+        </div>
+      </div>
+    </a>
+  </div>
   {% endfor %}
 </div>
 {% endblock %}

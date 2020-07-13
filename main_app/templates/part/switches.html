@@ -5,14 +5,33 @@
 {% endblock %}
 
 {% block content %}
-<div>
-  <h2>Switches</h2>
+<h1 class="ui dividing header">Switches</h1>
+
   {% for switch in switches %}
-  <a href="{% url 'switch' switch.id %}">
-    <div>
-      {{switch.name}}
-    </div>
-  </a>
+  <div class="ui raised segment">
+    <a href="{% url 'switch' switch.id %}">
+      <h3 class="ui left floated header">{{switch.name}}</h3>
+      <div class="ui clearing divider"></div>
+      <div class="show-container">
+        <div class="image">
+          <img src="{{switch.image}}" alt="" class="ui medium image">
+        </div>
+        <div class="info">
+          <label for="switch_type"><h4>Switch type:</h4> </label>
+          {%if switch.switch_type == 'LI' %}
+            Linear
+          {% elif switch.switch_type == 'TA'%}
+            Tactile
+          {% elif switch.switch_type == 'CL'%}
+            Clicky
+          {% elif switch.switch_type == 'MI'%}
+            Other
+          {% endif %} <br>
+          <label for="description"><h4>Description:</h4> </label>{{switch.description}}
+        </div>
+      </div>
+    </a>
+  </div>
   {% endfor %}
 </div>
 {% endblock %}
