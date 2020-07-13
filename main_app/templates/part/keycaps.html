@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Keycaps</title>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h2>Keycaps</h2>
+  {% for keycaps in keycaps %}
+  <a href="{% url 'keycap' keycap.id %}">
+    <div>
+      {{keycaps.name}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

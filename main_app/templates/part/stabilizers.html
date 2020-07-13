@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Stabilizers</title>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h2>Stabilizers</h2>
+  {% for stabilizer in stabilizers %}
+  <a href="{% url 'stabilizer' stabilizer.id %}">
+    <div>
+      {{stabilizer.name}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

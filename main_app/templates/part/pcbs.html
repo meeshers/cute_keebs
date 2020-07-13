@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>PCBs</title>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h2>PCBs</h2>
+  {% for pcb in pcbs %}
+  <a href="{% url 'pcb' pcb.id %}">
+    <div>
+      {{pcb.name}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

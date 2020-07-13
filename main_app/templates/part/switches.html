@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Switches</title>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h2>Switches</h2>
+  {% for switch in switches %}
+  <a href="{% url 'switch' switch.id %}">
+    <div>
+      {{switch.name}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

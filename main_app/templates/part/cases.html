@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Cases</title>
+{% endblock %}
+
+{% block content %}
+<div>
+  <h1 class="ui dividing header">Cases</h1>
+
+  {% for case in cases %}
+  <div class="ui rasied segment">
+    <h3 class="ui left floated header">{{case.name}}</h3>
+    <div class="ui clearing divider"></div>
+    <div class="show-container">
+      <div class="image">
+        <img src="{{case.image}}" alt="" class="ui medium image">
+      </div>
+      <div>
+        <p>{{case.form_type}}</p>
+        <p>{{case.material}}</p>
+        <p>{{case.description}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
