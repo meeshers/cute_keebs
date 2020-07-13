@@ -142,3 +142,7 @@ hr {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.show-container {
+  display: flex;
+}
