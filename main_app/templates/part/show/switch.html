@@ -1,5 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-switch
+<h1 class="ui dividing header">
+  {{switch.name}}
+</h1>
+
+<div class="ui large images">
+  <img src="{{switch.image}}" alt="">
+</div>
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Description
+</h4>
+
+<table class="ui definition table show-table">
+  <tbody>
+    <tr>
+      <td class="two wide column">Switch type:</td>
+      <td>
+        {%if switch.switch_type == 'LI' %}
+            Linear
+          {% elif switch.switch_type == 'TA'%}
+            Tactile
+          {% elif switch.switch_type == 'CL'%}
+            Clicky
+          {% elif switch.switch_type == 'MI'%}
+            Other
+          {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td class="two wide column">Description:</td>
+      <td>{{switch.description}}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
 {% endblock%}

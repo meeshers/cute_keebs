@@ -34,28 +34,31 @@
     <tbody>
       <tr>
         <td class="two wide column">Case:</td>
-        <td>{{keyboard.case.first}}</td>
+        <td><a href="{% url 'case' keyboard.case.first.id %}">{{keyboard.case.first}}</a></td>
       </tr>
       <tr>
         <td class="two wide column">Switch:</td>
-        <td>{{keyboard.switch.first}}</td>
+        <td><a href="{% url 'switch' keyboard.switch.first.id %}">{{keyboard.switch.first}}</a></td>
       </tr>
       <tr>
         <td class="two wide column">PCB:</td>
-        <td>{{keyboard.pcb.first}}</td>
+        <td><a href="{% url 'pcb' keyboard.pcb.first.id %}">{{keyboard.pcb.first}}</a></td>
       </tr>
       <tr>
         <td class="two wide column">Stabilizer:</td>
-        <td>{{keyboard.stabilizer.first}}</td>
+        <td><a href="{% url 'stabilizer' keyboard.stabilizer.first.id %}">{{keyboard.stabilizer.first}}</a></td>
       </tr>
       <tr>
         <td class="two wide column">Keycap:</td>
-        <td>{{keyboard.keycap.first}}</td>
+        <td><a href="{% url 'keycap' keyboard.keycap.first.id %}">{{keyboard.keycap.first}}</a></td>
       </tr>
     </tbody>
   </table>
 
   <div class="buttons">
+    <div>
+      <a class="ui teal button" href="{% url 'profile' %}">Go Back</a>
+    </div>
     <div>
       <a class="ui teal button" href="{% url 'edit_keyboard' keyboard.id %}">Edit</a>
     </div>

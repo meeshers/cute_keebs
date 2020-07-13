@@ -1,5 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-keycap
+<h1 class="ui dividing header">
+  {{keycap.name}}
+</h1>
+
+
+<div class="ui large images">
+  <img src="{{keycap.image}}" alt="">
+</div>
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Description
+</h4>
+
+<table class="ui definition table show-table">
+  <tbody>
+    <tr>
+      <td class="two wide column">Keycap Profile</td>
+      <td>
+        {%if keycap.profile == 'DS' %}
+        DSA profile
+        {% elif keycap.profile == 'SA'%}
+        SA profile
+        {% elif keycap.profile == 'OE'%}
+        OEM profile
+        {% elif keycap.profile == 'KT'%}
+        KAT profile
+        {% elif keycap.profile == 'CH'%}
+        Cherry profile
+        {% else %}
+        Default
+        {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td class="two wide column">Material</td>
+      <td>{{keycap.material}}</td>
+    </tr>
+    <tr>
+      <td class="two wide column">Description:</td>
+      <td>{{keycap.description}}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
 {% endblock%}

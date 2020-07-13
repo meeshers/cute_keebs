@@ -2,8 +2,55 @@
 
 {% block content %}
 <div>
+  <h1 class="ui dividing header">
+    {{case.name}}
+  </h1>
+
+
+  <div class="ui large images">
+    <img src="{{case.image}}" alt="">
+  </div>
+
+  <h4 class="ui horizontal divider header">
+    <i class="tag icon"></i>
+    Description
+  </h4>
+
+  <table class="ui definition table show-table">
+    <tbody>
+      <tr>
+        <td class="two wide column">Form type</td>
+        <td>
+          {%if case.form_type == '40' %}
+            40%
+          {% elif case.form_type == '60'%}
+            60%
+          {% elif case.form_type == '65'%}
+            65%
+          {% elif case.form_type == '75'%}
+            75%
+          {% elif case.form_type == '10'%}
+            Full Size
+          {% elif case.form_type == 'OR'%}
+            Ortholinear
+          {% elif case.form_type == 'ER'%}
+            Ergonomic
+          {% elif case.form_type == 'DE'%}
+            Default
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td class="two wide column">Material</td>
+        <td>{{case.material}}</td>
+      </tr>
+      <tr>
+        <td class="two wide column">Description:</td>
+        <td>{{case.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+<br>
 
 </div>
-
-
 {% endblock%}

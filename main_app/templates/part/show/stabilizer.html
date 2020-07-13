@@ -1,5 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-stab
+<h1 class="ui dividing header">
+  {{stabilizer.name}}
+</h1>
+
+<div class="ui large images">
+  <img src="{{stabilizer.image}}" alt="">
+</div>
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Description
+</h4>
+
+<table class="ui definition table show-table">
+  <tbody>
+    <tr>
+      <td class="two wide column">Stabilizer type:</td>
+      <td>
+        {%if stabilizer.stab_type == 'S' %}
+        Screw-in Stabilizers
+      {% elif stabilizer.stab_type == 'P'%}
+        PCB-Mounted
+      {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td class="two wide column">Description:</td>
+      <td>{{stabilizer.description}}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
 {% endblock%}
