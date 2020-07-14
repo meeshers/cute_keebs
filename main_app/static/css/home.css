@@ -4,6 +4,10 @@ body {
   font-size: 15px;
 }
 
+.error {
+  color: red;
+}
+
 .ui.menu {
   margin: 0;
 }

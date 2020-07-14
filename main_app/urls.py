@@ -5,7 +5,7 @@ urlpatterns = [
   path('', views.home, name='home'),
   path('tips/', views.tips, name='tips'),
   path('profile/', views.profile, name='profile'),
-  path('signup/', views.signup, name='signup'),
+  path('accounts/signup/', views.signup, name='signup'),
 
   # keyboard crud routes
   path('keyboard/<int:keyboard_id>', views.keyboard_view, name="show"),

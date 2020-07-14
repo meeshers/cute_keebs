@@ -15,7 +15,7 @@ from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser
 def home(request):
   error_message = ''
   form = CustomUserForm(request.POST)
-  context = {'form': form}
+  context = {'form': form, 'error_message': error_message}
   return render(request,'home.html', context)
 
 def tips(request):
@@ -31,7 +31,7 @@ def signup(request):
       login(request, user)
       return redirect('profile')
     else:
-      error_message = 'Invalid signup please try again'
+      error_message = 'Invalid signup. Please try again.'
   else:
     form = CustomUserForm()
   context = {'form': form, 'error_message': error_message}
@@ -55,6 +55,8 @@ def profile(request):
 @login_required
 def keyboard_view(request, keyboard_id):
   keyboard = Keyboard.objects.get(id=keyboard_id)
+  if keyboard.user != request.user:
+    return render(request, 'NA.html')
   context = {'keyboard':keyboard}
   return render(request, 'keyboard/show.html', context)
 
@@ -89,6 +91,7 @@ def keyboard_edit(request, keyboard_id):
   return render(request, 'keyboard/edit.html',context)
 
 ### PARTS PAGES ROUTES ###
+@login_required
 def discover(request):
   switches = Switch.objects.all()
   cases = Case.objects.all()
@@ -98,52 +101,62 @@ def discover(request):
   context = {'switches':switches, 'cases': cases,'keycaps': keycaps,'pcbs': pcbs,'stabilizers': stabilizers}
   return render(request, 'discover.html', context)
 
+@login_required
 def cases(request):
   cases = Case.objects.all()
   context = {'cases':cases }
   return render(request, 'part/cases.html', context)
 
+@login_required
 def switches(request):
   switches = Switch.objects.all()
   context = {'switches':switches }
   return render(request, 'part/switches.html', context)
 
+@login_required
 def keycaps(request):
   keycaps = Keycap.objects.all()
   context = {'keycaps':keycaps }
   return render(request, 'part/keycaps.html', context)
 
+@login_required
 def stabilizers(request):
   stabilizers = Stabilizer.objects.all()
   context = {'stabilizers':stabilizers }
   return render(request, 'part/stabilizers.html', context)
 
+@login_required
 def pcbs(request):
   pcbs = PCB.objects.all()
   context = {'pcbs':pcbs }
   return render(request, 'part/pcbs.html', context)
 
 ### PARTS SHOW PAGES ROUTES ###
+@login_required
 def case(request, case_id):
   case = Case.objects.get(id=case_id)
   context = {'case':case}
   return render(request, 'part/show/case.html', context)
 
+@login_required
 def switch(request, switch_id):
   switch = Switch.objects.get(id=switch_id)
   context = {'switch':switch}
   return render(request, 'part/show/switch.html', context)
 
+@login_required
 def keycap(request, keycap_id):
   keycap = Keycap.objects.get(id=keycap_id)
   context = {'keycap':keycap}
   return render(request, 'part/show/keycap.html', context)
 
+@login_required
 def stabilizer(request, stabilizer_id):
   stabilizer = Stabilizer.objects.get(id=stabilizer_id)
   context = {'stabilizer':stabilizer}
   return render(request, 'part/show/stabilizer.html', context)
 
+@login_required
 def pcb(request, pcb_id):
   pcb = PCB.objects.get(id=pcb_id)
   context = {'pcb':pcb}

@@ -11,9 +11,9 @@
       Edit Keyboard
     </h4>
     {% csrf_token %}
-    {{ edit_keyboard.as_p}}
+    <!-- {{ edit_keyboard.as_p}} -->
 
-   <!--  <div class="fields">
+    <div class="fields">
       <div class="seven wide field">
         <label for="name">Name</label>
         {{edit_keyboard.name}}
@@ -38,6 +38,10 @@
         {{edit_keyboard.pcb}}
       </div>
       <div class="ten wide field">
+        <label for="stabilizer">Stabilizer</label>
+        {{edit_keyboard.stabilizer}}
+      </div>
+      <div class="ten wide field">
         <label for="case">Keycap</label>
         {{edit_keyboard.keycap}}
       </div>
@@ -48,7 +52,7 @@
         <label for="description">Description</label>
         {{edit_keyboard.description}}
       </div>
-    </div> -->
+    </div>
 
     <input class="ui teal button" type="submit" value="Update">
     <input type="hidden" name="next" value={{next}}>
