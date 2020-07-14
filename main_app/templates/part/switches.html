@@ -33,5 +33,37 @@
     </a>
   </div>
   {% endfor %}
+
+  <div class="ui raised segment">
+    <h3 class="ui left floated header">Don't see the part you are looking for?</h3>
+    <div class="ui clearing divider"></div>
+    <a class="ui teal button"id="create-switch">Add Part</a>
+  </div>
+
+  <!-- modal -->
+  <div class="ui modal create" id="create-switch-form">
+    <i class="close icon"></i>
+    <div class="header">
+      Create Part
+    </div>
+    <div class="modal-body">
+      <form class="ui form create" action="{% url 'create_switch' %}" method="POST">
+        <p>Please enter a valid URL for the image field!</p>
+        {% csrf_token %}
+        {% for field in switch_form %}
+        <label class="label">{{field.label}}</label>
+        <br>
+        <div class="ui input">
+          {{field }}
+        </div>
+        <br>
+        {% endfor %}
+        <div class="actions">
+          <input class="ui teal button" type="submit" value="Create">
+          <input type="hidden" name="next" value={{next}}>
+        </div>
+    </div>
+    </form>
+  </div>
 </div>
 {% endblock %}

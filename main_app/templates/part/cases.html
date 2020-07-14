@@ -53,7 +53,7 @@
   <div class="ui raised segment">
     <h3 class="ui left floated header">Don't see the part you are looking for?</h3>
     <div class="ui clearing divider"></div>
-    <p>Click <a class="item"id="create-case">here</a> to add a part</p>
+    <a class="ui teal button"id="create-case">Add Part</a>
   </div>
 
   <!-- modal -->
@@ -63,7 +63,8 @@
       Create Part
     </div>
     <div class="modal-body">
-      <form action="{% url 'create_case' %}" method="POST">
+      <form class="ui form create" action="{% url 'create_case' %}" method="POST">
+        <p>Please enter a valid URL for the image field!</p>
         {% csrf_token %}
         {% for field in case_form %}
         <label class="label">{{field.label}}</label>

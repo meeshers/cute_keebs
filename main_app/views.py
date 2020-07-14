@@ -132,7 +132,8 @@ def stabilizers(request):
 @login_required
 def pcbs(request):
   pcbs = PCB.objects.all()
-  context = {'pcbs':pcbs }
+  pcb_form = CreatePCB(request.POST)
+  context = {'pcbs':pcbs, 'pcb_form': pcb_form }
   return render(request, 'part/pcbs.html', context)
 
 ### PARTS SHOW PAGES ROUTES ###
@@ -163,8 +164,7 @@ def stabilizer(request, stabilizer_id):
 @login_required
 def pcb(request, pcb_id):
   pcb = PCB.objects.get(id=pcb_id)
-  pcb_form = CreatePCB(request.POST)
-  context = {'pcb':pcb, 'pcb_form':pcb_form}
+  context = {'pcb':pcb}
   return render(request, 'part/show/pcb.html', context)
 
 # PART CREATION
