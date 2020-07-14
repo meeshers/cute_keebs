@@ -212,3 +212,7 @@ hr {
   width: 400px;
   height: 100px;
 }
+
+.ui.modal.delete {
+  height: 150px;
+}

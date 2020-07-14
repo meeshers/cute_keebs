@@ -14,6 +14,7 @@ $('#create-keycap').on('click', () => modal('create-keycap-form'));
 $('#create-pcb').on('click', () => modal('create-pcb-form'));
 $('#create-stab').on('click', () => modal('create-stab-form'));
 $('#create-switch').on('click', () => modal('create-switch-form'));
+$('#delete-confirm').on('click', () => modal('delete'));
 
 $('.special.cards .image').dimmer({
     on: 'hover'
