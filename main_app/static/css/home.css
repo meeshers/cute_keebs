@@ -198,3 +198,8 @@ hr {
   width: 900px;
   margin: 0 auto;
 }
+
+.ui.modal.create {
+  width: 500px;
+  height: 600px;
+}

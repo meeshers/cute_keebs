@@ -27,4 +27,11 @@ urlpatterns = [
   path('discover/keycaps/<int:keycap_id>', views.keycap, name="keycap"),
   path('discover/stabilizers/<int:stabilizer_id>', views.stabilizer, name="stabilizer"),
   path('discover/pcbs/<int:pcb_id>', views.pcb, name="pcb"),
+
+  # keyboard part creation
+  path('create-case', views.create_case, name='create_case'),
+  path('create-switch', views.create_switch, name='create_switch'),
+  path('create-stab', views.create_stab, name='create_stab'),
+  path('create-pcb', views.create_pcb, name='create_pcb'),
+  path('create-keycap', views.create_keycap, name='create_keycap'),
 ]

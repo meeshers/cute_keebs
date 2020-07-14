@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 
 # forms
-from .forms import CustomUserForm, CreateKeyboard, EditKeyboard
+from .forms import CustomUserForm, CreateKeyboard, EditKeyboard, CreateCase, CreateKeycap, CreatePCB, CreateStabilizer, CreateSwitch
 
 # models
 from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser
@@ -104,25 +104,29 @@ def discover(request):
 @login_required
 def cases(request):
   cases = Case.objects.all()
-  context = {'cases':cases }
+  case_form = CreateCase(request.POST)
+  context = {'cases':cases, 'case_form': case_form }
   return render(request, 'part/cases.html', context)
 
 @login_required
 def switches(request):
   switches = Switch.objects.all()
-  context = {'switches':switches }
+  switch_form = CreateSwitch(request.POST)
+  context = {'switches':switches, 'switch_form':switch_form }
   return render(request, 'part/switches.html', context)
 
 @login_required
 def keycaps(request):
   keycaps = Keycap.objects.all()
-  context = {'keycaps':keycaps }
+  keycap_form = CreateKeycap(request.POST)
+  context = {'keycaps':keycaps, 'keycap_form':keycap_form }
   return render(request, 'part/keycaps.html', context)
 
 @login_required
 def stabilizers(request):
   stabilizers = Stabilizer.objects.all()
-  context = {'stabilizers':stabilizers }
+  stab_form = CreateStabilizer(request.POST)
+  context = {'stabilizers':stabilizers, 'stab_form':stab_form }
   return render(request, 'part/stabilizers.html', context)
 
 @login_required
@@ -159,5 +163,48 @@ def stabilizer(request, stabilizer_id):
 @login_required
 def pcb(request, pcb_id):
   pcb = PCB.objects.get(id=pcb_id)
-  context = {'pcb':pcb}
+  pcb_form = CreatePCB(request.POST)
+  context = {'pcb':pcb, 'pcb_form':pcb_form}
   return render(request, 'part/show/pcb.html', context)
+
+# PART CREATION
+
+def create_case(request):
+  case_form = CreateCase(request.POST)
+  if case_form.is_valid():
+    case = case_form.save()
+    return redirect('cases')
+  context = {'case_form': case_form}
+  return render(request, 'cases', context)
+
+def create_switch(request):
+  switch_form = CreateSwitch(request.POST)
+  if switch_form.is_valid():
+    switch = switch_form.save()
+    return redirect('switches')
+  context = {'switch_form': switch_form}
+  return render(request, 'switches', context)
+
+def create_keycap(request):
+  keycap_form = CreateKeycap(request.POST)
+  if keycap_form.is_valid():
+    keycap = keycap_form.save()
+    return redirect('keycaps')
+  context = {'keycap_form': keycap_form}
+  return render(request, 'keycaps', context)
+
+def create_pcb(request):
+  pcb_form = CreatePCB(request.POST)
+  if pcb_form.is_valid():
+    pcb = pcb_form.save()
+    return redirect('pcbs')
+  context = {'pcb_form': pcb_form}
+  return render(request, 'pcbs', context)
+
+def create_stab(request):
+  stab_form = CreateStabilizer(request.POST)
+  if stab_form.is_valid():
+    stab = stab_form.save()
+    return redirect('stabs')
+  context = {'stab_form': stab_form}
+  return render(request, 'stabs', context)
