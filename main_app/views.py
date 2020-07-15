@@ -220,6 +220,7 @@ def create_stab(request):
   return render(request, 'stabs', context)
 
 ### IC/GB TRACKER ROUTES ###
+@login_required
 def create_tracker(request):
   tracker_form = CreateTracker(request.POST)
   if tracker_form.is_valid():
@@ -230,6 +231,7 @@ def create_tracker(request):
   context = {'tracker_form': tracker_form}
   return render(request, 'tracker/create.html', context)
 
+@login_required
 def edit_tracker(request, tracker_id):
   tracker = Tracker.objects.get(id=tracker_id)
   if request.method == 'POST':
@@ -241,3 +243,9 @@ def edit_tracker(request, tracker_id):
     edit_tracker = EditTracker(instance=tracker)
   context={'tracker':tracker, 'edit_tracker': edit_tracker}
   return render(request, 'tracker/edit.html',context)
+
+@login_required
+def delete_tracker(request, tracker_id):
+  tracker = Tracker.objects.get(id=tracker_id)
+  tracker.delete()
+  return redirect('profile')

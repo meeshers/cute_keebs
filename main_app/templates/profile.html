@@ -110,8 +110,13 @@
                 <b>Description:</b> <br>
                 {{tracker.description}}
               </p>
-              <a href="{% url 'edit_tracker' tracker.id %}" class="ui teal button">Edit</a>
-              <a href="" class="ui teal button">Delete</a>
+              <div class="buttons">
+                <a href="{% url 'edit_tracker' tracker.id %}" class="ui teal button">Edit</a>
+                <form action="{% url 'delete_tracker' tracker.id %}" method="POST">
+                  {% csrf_token %}
+                  <button class="ui teal button" type="submit">Delete</button>
+                </form>
+              </div>
             </div>
             {% endif %}
             {% endfor %}
@@ -131,11 +136,16 @@
                 <b class="accordion-labels">Group Buy Start Date:</b> <br>
                 {{tracker.date}}
                 <br>
-               <b>Description:</b> <br>
+                <b>Description:</b> <br>
                 {{tracker.description}}
               </p>
-              <a href="{% url 'edit_tracker' tracker.id %}" class="ui teal button">Edit</a>
-              <a href="" class="ui teal button">Delete</a>
+              <div class="buttons">
+                <a href="{% url 'edit_tracker' tracker.id %}" class="ui teal button">Edit</a>
+                <form action="{% url 'delete_tracker' tracker.id %}" method="POST">
+                  {% csrf_token %}
+                  <button class="ui teal button" type="submit">Delete</button>
+                </form>
+              </div>
             </div>
             {% endif %}
             {% endfor %}
