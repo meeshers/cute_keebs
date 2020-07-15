@@ -82,33 +82,61 @@
     {% endfor %}
   </div>
 
-  <h4 class="ui horizontal divider header">
-    <i class="keyboard outline icon"></i>
-    Track Interest Checks or Group Buy
-  </h4>
-  <div class="ui segment">
-    <div class="ui two column very relaxed grid">
-      <div class="column">
-        <h3>Interest Checks</h3>
-        {% for tracker in trackers %}
-        {% if tracker.interest_type == "IC" %}
-        {{tracker.title}}
-        {% endif %}
-        {% endfor %}
+  <div class="tracker">
+    <h4 class="ui horizontal divider header">
+      <i class="keyboard outline icon"></i>
+      Track Interest Checks or Group Buy
+    </h4>
+    <div class="ui segment">
+      <div class="ui two column very relaxed grid">
+        <div class="column">
+          <h3>Interest Checks</h3>
+          <div class="ui accordion">
+            {% for tracker in trackers %}
+            {% if tracker.interest_type == "IC" %}
+            <div class="title">
+              <i class="dropdown icon"></i>
+              {{tracker.title}}
+            </div>
+            <div class="content">
+              <p class="transition hidden">
+                <label for="start">Interest Check Date: </label>{{tracker.date}}
+                <br>
+                <label for="start">Description: </label>{{tracker.description}}
+              </p>
+              <a href="" class="ui teal button">Edit</a>
+              <a href="" class="ui teal button">Delete</a>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="column">
+          <h3>Group Buys</h3>
+          <div class="ui accordion">
+            {% for tracker in trackers %}
+            {% if tracker.interest_type == "GB" %}
+            <div class="title">
+              <i class="dropdown icon"></i>
+              {{tracker.title}}
+            </div>
+            <div class="content">
+              <p class="transition hidden">
+                <label for="start">Group Buy Start Date: </label>{{tracker.date}}
+                <br>
+                <label for="start">Description: </label>{{tracker.description}}
+              </p>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
       </div>
-      <div class="column">
-        <h3>Group Buys</h3>
-        {% for tracker in trackers %}
-        {% if tracker.interest_type == "GB" %}
-        {{tracker.title}}
-        {% endif %}
-        {% endfor %}
+      <div class="ui vertical divider">
+        or
       </div>
     </div>
-    <div class="ui vertical divider">
-      
-    </div>
+    <a class="ui teal button" href="{% url 'create_tracker' %}">Create Tracker</a>
   </div>
-  <a class="ui teal button" href="{% url 'create_tracker' %}">Create Tracker</a>
 </div>
 {% endblock %}
