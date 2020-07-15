@@ -216,3 +216,15 @@ hr {
 .ui.modal.delete {
   height: 150px;
 }
+
+.ui.accordion{
+  text-align: left;
+}
+
+.ui.accordion>.content{
+  text-align: center;
+}
+.accordion-labels {
+  color: #204051;
+  font-size: 12px;
+}

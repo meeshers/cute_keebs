@@ -100,9 +100,11 @@
             </div>
             <div class="content">
               <p class="transition hidden">
-                <label for="start">Interest Check Date: </label>{{tracker.date}}
+                Interest Check Date: <br>
+                {{tracker.date}}
                 <br>
-                <label for="start">Description: </label>{{tracker.description}}
+                Description: <br>
+                {{tracker.description}}
               </p>
               <a href="" class="ui teal button">Edit</a>
               <a href="" class="ui teal button">Delete</a>
@@ -122,10 +124,14 @@
             </div>
             <div class="content">
               <p class="transition hidden">
-                <label for="start">Group Buy Start Date: </label>{{tracker.date}}
+               Group Buy Start Date: <br>
+                {{tracker.date}}
                 <br>
-                <label for="start">Description: </label>{{tracker.description}}
+               Description: <br>
+                {{tracker.description}}
               </p>
+              <a href="" class="ui teal button">Edit</a>
+              <a href="" class="ui teal button">Delete</a>
             </div>
             {% endif %}
             {% endfor %}
