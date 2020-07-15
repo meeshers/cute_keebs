@@ -14,6 +14,7 @@
 
   <a class="ui teal button" href="{% url 'create_keyboard' %}">Create keyboard</a>
 
+  <!-- Owned keyboards -->
   <h4 class="ui horizontal divider header">
     <i class="keyboard outline icon"></i>
     Owned Keyboards
@@ -47,6 +48,7 @@
     {% endfor %}
   </div>
 
+  <!-- Dream Keyboards -->
   <h4 class="ui horizontal divider header">
     <i class="keyboard outline icon"></i>
     Dream Keyboards
@@ -82,6 +84,7 @@
     {% endfor %}
   </div>
 
+  <!-- IC/GB tracker -->
   <div class="tracker">
     <h4 class="ui horizontal divider header">
       <i class="keyboard outline icon"></i>
@@ -96,14 +99,14 @@
             {% if tracker.interest_type == "IC" %}
             <div class="title">
               <i class="dropdown icon"></i>
-              {{tracker.title}}
+              <b>{{tracker.title}}</b>
             </div>
             <div class="content">
               <p class="transition hidden">
-                Interest Check Date: <br>
+                <b class="accordion-labels">Interest Check Date:</b> <br>
                 {{tracker.date}}
                 <br>
-                Description: <br>
+                <b>Description:</b> <br>
                 {{tracker.description}}
               </p>
               <a href="" class="ui teal button">Edit</a>
@@ -120,14 +123,14 @@
             {% if tracker.interest_type == "GB" %}
             <div class="title">
               <i class="dropdown icon"></i>
-              {{tracker.title}}
+              <b>{{tracker.title}}</b>
             </div>
             <div class="content">
               <p class="transition hidden">
-               Group Buy Start Date: <br>
+                <b class="accordion-labels">Group Buy Start Date:</b> <br>
                 {{tracker.date}}
                 <br>
-               Description: <br>
+               <b>Description:</b> <br>
                 {{tracker.description}}
               </p>
               <a href="" class="ui teal button">Edit</a>
