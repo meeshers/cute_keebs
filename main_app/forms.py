@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm, Select
 from django.db import models
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser
+from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser, Tracker
 
 class CustomUserForm(UserCreationForm):
   class Meta:
@@ -51,3 +51,23 @@ class CreateStabilizer(forms.ModelForm):
   class Meta:
     model = Stabilizer
     fields = ['name', 'stab_type', 'image', 'description']
+
+# IC/GB Tracker form
+class DateInput(forms.DateInput):
+  input_type='date'
+
+class CreateTracker(forms.ModelForm):
+  class Meta:
+    model = Tracker
+    widgets ={
+      'date': DateInput()
+    }
+    fields = ['title', 'interest_type', 'date', 'description']
+
+class EditTracker(forms.ModelForm):
+  class Meta:
+    model = Tracker
+    widgets ={
+      'date': DateInput()
+    }
+    fields = ['title', 'interest_type', 'date', 'description']

@@ -14,6 +14,7 @@
 
   <a class="ui teal button" href="{% url 'create_keyboard' %}">Create keyboard</a>
 
+  <!-- Owned keyboards -->
   <h4 class="ui horizontal divider header">
     <i class="keyboard outline icon"></i>
     Owned Keyboards
@@ -47,6 +48,7 @@
     {% endfor %}
   </div>
 
+  <!-- Dream Keyboards -->
   <h4 class="ui horizontal divider header">
     <i class="keyboard outline icon"></i>
     Dream Keyboards
@@ -80,6 +82,80 @@
     </div>
     {% endif %}
     {% endfor %}
+  </div>
+
+  <!-- IC/GB tracker -->
+  <div class="tracker">
+    <h4 class="ui horizontal divider header">
+      <i class="keyboard outline icon"></i>
+      Track Interest Checks or Group Buy
+    </h4>
+    <a class="ui teal button" href="{% url 'create_tracker' %}">Create Tracker</a>
+    <div class="ui segment">
+      <div class="ui two column very relaxed grid">
+        <div class="column">
+          <h3>Interest Checks</h3>
+          <div class="ui accordion">
+            {% for tracker in trackers %}
+            {% if tracker.interest_type == "IC" %}
+            <div class="title">
+              <i class="dropdown icon"></i>
+              <b>{{tracker.title}}</b>
+            </div>
+            <div class="content">
+              <p class="transition hidden">
+                <b class="accordion-labels">Interest Check Date:</b> <br>
+                {{tracker.date}}
+                <br>
+                <b>Description:</b> <br>
+                {{tracker.description}}
+              </p>
+              <div class="buttons">
+                <a href="{% url 'edit_tracker' tracker.id %}" class="ui teal button">Edit</a>
+                <form action="{% url 'delete_tracker' tracker.id %}" method="POST">
+                  {% csrf_token %}
+                  <button class="ui teal button" type="submit">Delete</button>
+                </form>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="column">
+          <h3>Group Buys</h3>
+          <div class="ui accordion">
+            {% for tracker in trackers %}
+            {% if tracker.interest_type == "GB" %}
+            <div class="title">
+              <i class="dropdown icon"></i>
+              <b>{{tracker.title}}</b>
+            </div>
+            <div class="content">
+              <p class="transition hidden">
+                <b class="accordion-labels">Group Buy Start Date:</b> <br>
+                {{tracker.date}}
+                <br>
+                <b>Description:</b> <br>
+                {{tracker.description}}
+              </p>
+              <div class="buttons">
+                <a href="{% url 'edit_tracker' tracker.id %}" class="ui teal button">Edit</a>
+                <form action="{% url 'delete_tracker' tracker.id %}" method="POST">
+                  {% csrf_token %}
+                  <button class="ui teal button" type="submit">Delete</button>
+                </form>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="ui vertical divider">
+        or
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

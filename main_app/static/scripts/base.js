@@ -19,4 +19,10 @@ $('#delete-confirm').on('click', () => modal('delete'));
 $('.special.cards .image').dimmer({
     on: 'hover'
   });
+
+  $(document).ready(function () {
+    window.onload = function () {
+      $('.ui.accordion').accordion();
+    };
+  });
   

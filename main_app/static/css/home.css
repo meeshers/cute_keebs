@@ -1,7 +1,7 @@
 body {
   background-color: #F0F0F0;
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .error {
@@ -48,6 +48,7 @@ body {
 .footer {
   background-color: #888888;
   color: white;
+  font-size: 15px;
   text-align: center;
   position: relative;
   padding: 10px;
@@ -215,4 +216,25 @@ hr {
 
 .ui.modal.delete {
   height: 150px;
+}
+
+
+.tracker {
+  padding-bottom: 20px;
+}
+
+.tracker>.ui.segment{
+  margin-top: 15px;
+}
+.ui.accordion{
+  text-align: left;
+}
+
+.ui.accordion>.content{
+  text-align: center;
+}
+
+.accordion-labels {
+  color: #204051;
+  font-size: 1.2em;
 }
