@@ -81,5 +81,13 @@
     {% endif %}
     {% endfor %}
   </div>
+
+<h2>trackers</h2>
+  {% for tracker in trackers %}
+  <div>
+    {{tracker.title}}
+  </div>
+  {% endfor %}
+  <a href="{% url 'create_tracker' %}">Create Tracker</a>
 </div>
 {% endblock %}

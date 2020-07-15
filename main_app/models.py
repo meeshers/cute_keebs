@@ -124,3 +124,23 @@ class Keyboard(models.Model):
 
   def __str__(self):
     return self.name
+
+
+### Interest/Group buy tracker
+INTEREST = (
+  ('IC', "Interest Check"),
+  ('GB', "Group Buy")
+)
+
+class Tracker(models.Model):
+  title = models.CharField(max_length=50)
+  interest_type = models.CharField(max_length=2, choices=INTEREST, default=INTEREST[0][0])
+  date = models.DateField(blank=True)
+  description = models.TextField(max_length=1000)
+  user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+
+  class Meta:
+    ordering = ['-date']
+
+  def __str__(self):
+    return self.title

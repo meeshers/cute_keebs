@@ -16,6 +16,10 @@ $('#create-stab').on('click', () => modal('create-stab-form'));
 $('#create-switch').on('click', () => modal('create-switch-form'));
 $('#delete-confirm').on('click', () => modal('delete'));
 
+$('#example2').calendar({
+  type: 'date'
+});
+
 $('.special.cards .image').dimmer({
     on: 'hover'
   });

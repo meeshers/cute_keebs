@@ -34,4 +34,7 @@ urlpatterns = [
   path('create-stab', views.create_stab, name='create_stab'),
   path('create-pcb', views.create_pcb, name='create_pcb'),
   path('create-keycap', views.create_keycap, name='create_keycap'),
+
+  # tracker routes
+  path('create-tracker', views.create_tracker, name="create_tracker"),
 ]

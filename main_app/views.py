@@ -6,10 +6,10 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 
 # forms
-from .forms import CustomUserForm, CreateKeyboard, EditKeyboard, CreateCase, CreateKeycap, CreatePCB, CreateStabilizer, CreateSwitch
+from .forms import CustomUserForm, CreateKeyboard, EditKeyboard, CreateCase, CreateKeycap, CreatePCB, CreateStabilizer, CreateSwitch, CreateTracker
 
 # models
-from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser
+from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser, Tracker
 
 # Create your views here.
 def home(request):
@@ -41,14 +41,20 @@ def signup(request):
 def profile(request):
   if request.method == 'POST':
     keyboard_form = CreateKeyboard(request.POST)
+    tracker_form = CreateTracker(request.POST)
     if keyboard_form.is_valid():
       keyboard = keyboard_form.save(commit=False)
       keyboard.user = request.user
       keyboard.save()
+    elif tracker_form.is_valid():
+      tracker = tracker_form.save(commit=False)
+      tracker.user = request.user
+      tracker.save()
     return redirect('profile')
   else:
       keyboards = Keyboard.objects.all().filter(user=request.user.id)
-  context = {"keyboards":keyboards}
+      trackers = Tracker.objects.all().filter(user=request.user.id)
+  context = {"keyboards":keyboards,"trackers":trackers}
   return render(request, 'profile.html',context)
 
 ### KEYBOARD CRUD ###
@@ -167,8 +173,8 @@ def pcb(request, pcb_id):
   context = {'pcb':pcb}
   return render(request, 'part/show/pcb.html', context)
 
-# PART CREATION
-
+### PART CREATION ###
+@login_required
 def create_case(request):
   case_form = CreateCase(request.POST)
   if case_form.is_valid():
@@ -177,6 +183,7 @@ def create_case(request):
   context = {'case_form': case_form}
   return render(request, 'cases', context)
 
+@login_required
 def create_switch(request):
   switch_form = CreateSwitch(request.POST)
   if switch_form.is_valid():
@@ -185,6 +192,7 @@ def create_switch(request):
   context = {'switch_form': switch_form}
   return render(request, 'switches', context)
 
+@login_required
 def create_keycap(request):
   keycap_form = CreateKeycap(request.POST)
   if keycap_form.is_valid():
@@ -193,6 +201,7 @@ def create_keycap(request):
   context = {'keycap_form': keycap_form}
   return render(request, 'keycaps', context)
 
+@login_required
 def create_pcb(request):
   pcb_form = CreatePCB(request.POST)
   if pcb_form.is_valid():
@@ -201,6 +210,7 @@ def create_pcb(request):
   context = {'pcb_form': pcb_form}
   return render(request, 'pcbs', context)
 
+@login_required
 def create_stab(request):
   stab_form = CreateStabilizer(request.POST)
   if stab_form.is_valid():
@@ -208,3 +218,14 @@ def create_stab(request):
     return redirect('stabs')
   context = {'stab_form': stab_form}
   return render(request, 'stabs', context)
+
+### IC/GB TRACKER ROUTES ###
+def create_tracker(request):
+  tracker_form = CreateTracker(request.POST)
+  if tracker_form.is_valid():
+    tracker = tracker_form.save(commit=False)
+    tracker.user = request.user
+    tracker.save()
+    return redirect('profile')
+  context = {'tracker_form': tracker_form}
+  return render(request, 'tracker/create.html', context)
