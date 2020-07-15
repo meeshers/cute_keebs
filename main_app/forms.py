@@ -63,3 +63,11 @@ class CreateTracker(forms.ModelForm):
       'date': DateInput()
     }
     fields = ['title', 'interest_type', 'date', 'description']
+
+class EditTracker(forms.ModelForm):
+  class Meta:
+    model = Tracker
+    widgets ={
+      'date': DateInput()
+    }
+    fields = ['title', 'interest_type', 'date', 'description']

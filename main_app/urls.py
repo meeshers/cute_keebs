@@ -37,4 +37,5 @@ urlpatterns = [
 
   # tracker routes
   path('create-tracker', views.create_tracker, name="create_tracker"),
+  path('edit-tracker/<int:tracker_id>', views.edit_tracker, name="edit_tracker"),
 ]

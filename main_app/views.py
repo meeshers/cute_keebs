@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 
 # forms
-from .forms import CustomUserForm, CreateKeyboard, EditKeyboard, CreateCase, CreateKeycap, CreatePCB, CreateStabilizer, CreateSwitch, CreateTracker
+from .forms import CustomUserForm, CreateKeyboard, EditKeyboard, CreateCase, CreateKeycap, CreatePCB, CreateStabilizer, CreateSwitch, CreateTracker, EditTracker
 
 # models
 from .models import Switch, Case, Keycap, PCB, Stabilizer, Keyboard, CustomUser, Tracker
@@ -229,3 +229,15 @@ def create_tracker(request):
     return redirect('profile')
   context = {'tracker_form': tracker_form}
   return render(request, 'tracker/create.html', context)
+
+def edit_tracker(request, tracker_id):
+  tracker = Tracker.objects.get(id=tracker_id)
+  if request.method == 'POST':
+    edit_tracker = EditTracker(request.POST, instance=tracker)
+    if edit_tracker.is_valid():
+      edit_tracker.save()
+      return redirect('profile')
+  else:
+    edit_tracker = EditTracker(instance=tracker)
+  context={'tracker':tracker, 'edit_tracker': edit_tracker}
+  return render(request, 'tracker/edit.html',context)

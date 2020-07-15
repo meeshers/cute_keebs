@@ -90,6 +90,7 @@
       <i class="keyboard outline icon"></i>
       Track Interest Checks or Group Buy
     </h4>
+    <a class="ui teal button" href="{% url 'create_tracker' %}">Create Tracker</a>
     <div class="ui segment">
       <div class="ui two column very relaxed grid">
         <div class="column">
@@ -109,7 +110,7 @@
                 <b>Description:</b> <br>
                 {{tracker.description}}
               </p>
-              <a href="" class="ui teal button">Edit</a>
+              <a href="{% url 'edit_tracker' tracker.id %}" class="ui teal button">Edit</a>
               <a href="" class="ui teal button">Delete</a>
             </div>
             {% endif %}
@@ -133,7 +134,7 @@
                <b>Description:</b> <br>
                 {{tracker.description}}
               </p>
-              <a href="" class="ui teal button">Edit</a>
+              <a href="{% url 'edit_tracker' tracker.id %}" class="ui teal button">Edit</a>
               <a href="" class="ui teal button">Delete</a>
             </div>
             {% endif %}
@@ -145,7 +146,6 @@
         or
       </div>
     </div>
-    <a class="ui teal button" href="{% url 'create_tracker' %}">Create Tracker</a>
   </div>
 </div>
 {% endblock %}
