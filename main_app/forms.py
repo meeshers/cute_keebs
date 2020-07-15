@@ -17,14 +17,15 @@ class CreateKeyboard(forms.ModelForm):
 class EditKeyboard(forms.ModelForm):
   class Meta:
     model = Keyboard
-    fields = ['name','status', 'case', 'switch', 'pcb', 'stabilizer', 'keycap', 'description']
-"""     widgets = {
+    widgets = {
       'case': Select(),
       'switch': Select(),
       'pcb': Select(),
       'stabilizer': Select(),
       'keycap': Select()
-    } """
+    }
+    fields = ['name','status', 'case', 'switch', 'pcb', 'stabilizer', 'keycap', 'description']
+
 
 # forms for stretch goal
 class CreateSwitch(forms.ModelForm):
@@ -53,7 +54,13 @@ class CreateStabilizer(forms.ModelForm):
     fields = ['name', 'stab_type', 'image', 'description']
 
 # IC/GB Tracker form
+class DateInput(forms.DateInput):
+  input_type='date'
+
 class CreateTracker(forms.ModelForm):
   class Meta:
     model = Tracker
+    widgets ={
+      'date': DateInput()
+    }
     fields = ['title', 'interest_type', 'date', 'description']

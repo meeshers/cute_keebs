@@ -11,7 +11,6 @@
     Create Tracker
   </h4>
   {% csrf_token %}
-  <!-- {{tracker_form.as_p}} -->
   <div class="fields">
     <div class="seven wide field">
       <label for="name">Title</label>
@@ -21,16 +20,7 @@
       <label for="status">Interest Check or Group Buy</label>
       {{tracker_form.interest_type}}
     </div>
-    <!-- <div class="seven wide field">
-      <label for="status">Date</label>
-      <input type="date" name="tracker" id="tracker">
-    </div> -->
-    <div class="ui calendar" id="example2">
-      <div class="ui input left icon">
-        <i class="calendar icon"></i>
-        <input name="date" type="text" placeholder="Date">
-      </div>
-    </div>
+    {{tracker_form.date}}
   </div>
 
   <div class="fields">
