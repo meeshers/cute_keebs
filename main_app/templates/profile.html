@@ -82,12 +82,33 @@
     {% endfor %}
   </div>
 
-<h2>trackers</h2>
-  {% for tracker in trackers %}
-  <div>
-    {{tracker.title}}
+  <h4 class="ui horizontal divider header">
+    <i class="keyboard outline icon"></i>
+    Track Interest Checks or Group Buy
+  </h4>
+  <div class="ui segment">
+    <div class="ui two column very relaxed grid">
+      <div class="column">
+        <h3>Interest Checks</h3>
+        {% for tracker in trackers %}
+        {% if tracker.interest_type == "IC" %}
+        {{tracker.title}}
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="column">
+        <h3>Group Buys</h3>
+        {% for tracker in trackers %}
+        {% if tracker.interest_type == "GB" %}
+        {{tracker.title}}
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="ui vertical divider">
+      
+    </div>
   </div>
-  {% endfor %}
-  <a href="{% url 'create_tracker' %}">Create Tracker</a>
+  <a class="ui teal button" href="{% url 'create_tracker' %}">Create Tracker</a>
 </div>
 {% endblock %}
