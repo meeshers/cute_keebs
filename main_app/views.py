@@ -16,10 +16,10 @@ def home(request):
   error_message = ''
   form = CustomUserForm(request.POST)
   context = {'form': form, 'error_message': error_message}
-  return render(request,'home.html', context)
+  return render(request,'base/home.html', context)
 
 def tips(request):
-  return render(request, 'tips.html')
+  return render(request, 'base/tips.html')
 
 #sign up/register
 def signup(request):
@@ -35,7 +35,7 @@ def signup(request):
   else:
     form = CustomUserForm()
   context = {'form': form, 'error_message': error_message}
-  return render(request,'home.html',context)
+  return render(request,'home',context)
 
 @login_required
 def profile(request):
@@ -55,7 +55,7 @@ def profile(request):
       keyboards = Keyboard.objects.all().filter(user=request.user.id)
       trackers = Tracker.objects.all().filter(user=request.user.id)
   context = {"keyboards":keyboards,"trackers":trackers}
-  return render(request, 'profile.html',context)
+  return render(request, 'base/profile.html',context)
 
 ### KEYBOARD CRUD ###
 @login_required
@@ -105,7 +105,7 @@ def discover(request):
   pcbs = PCB.objects.all()
   stabilizers = Stabilizer.objects.all()
   context = {'switches':switches, 'cases': cases,'keycaps': keycaps,'pcbs': pcbs,'stabilizers': stabilizers}
-  return render(request, 'discover.html', context)
+  return render(request, 'base/discover.html', context)
 
 @login_required
 def cases(request):
