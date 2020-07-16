@@ -20,7 +20,7 @@ For the "Discover":
 ## Wireframes
 
 ## ERD
-
+![erd](/images/keeb ERD.jpg)
 
 ## Technologies
 Dream Keebs utilizes the following technologies:
