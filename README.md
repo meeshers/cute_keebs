@@ -18,8 +18,35 @@ For the "Discover":
   * Users can also create parts for their own needs if they need it for their custom dream build
 
 ## Wireframes
+### Landing Page
+<img src="/images/Home.png">
+
+### Sign In/Sign Up Modal
+<img src="/images/Sign in_Sign up.png">
+
+### Discover Parts
+<img src="/images/Discover parts.png">
+
+### Tips Page
+<img src="/images/Tips.png">
+
+### Profile Page
+<img src="/images/Profile page.png">
+
+### Keyboard Creation Page
+<img src="/images/Create keyboard.png">
+
+### Keyboard Edit Page
+<img src="/images/Keyboard Edit Page.png">
+
+### Keyboard Show Page 
+<img src="/images/Keyboard showpage.png">
+
+### All Parts Show Page
+<img src="/images/Parts show page.png">
 
 ## ERD
+<img src="/images/keeb ERD.jpg">
 
 ## Technologies
 Dream Keebs utilizes the following technologies:
@@ -34,14 +61,19 @@ To install the dependencies for this project, the user must do the following bel
   * Make sure they are running a virtual environment in python 3
   * Activate the virtual environment
   * Run "pip3 install -r requirements.txt"
-      *IF it does not work:</li>
-      * Install pip packages for Django and psycopg2
+ 
+      * IF it does not work:
+      * Install pip packages for Django and psycopg2 using `pip3 install Django` and `pip3 install psycopg2` or `psycopg2-binary`
   * Run `python3 manage.py migrate` to import all models
   OPTIONAL:
   * To load the JSON data into the database, you must do `python3 manage.py loaddata /main_app/fixture/file_name.json`
 
-
-
 ## Future Features
+ * Allow users to be able to edit and delete the part that they created
+ * Create a blog/forum space to allow the community to interact with each other
+ * Generate a checklist based on a dream keyboard, and allow the user to track what they have already purchased for their build
+ * Create a search functionality for parts
 
 ## Unsolved Problems
+ * Sign up/Sign in verification not fully functioning
+ * Creation of keyboard in a single step rather than splitting it up
