@@ -1,7 +1,9 @@
 body {
   background-color: #F0F0F0;
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
 }
 
 .error {
@@ -52,7 +54,7 @@ body {
   text-align: center;
   position: relative;
   padding: 10px;
-  bottom: 0;
+  align-self: flex-end;
 }
 
 hr {
@@ -198,6 +200,7 @@ hr {
 .videos{
   width: 900px;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 .ui.modal.create {
@@ -237,4 +240,20 @@ hr {
 .accordion-labels {
   color: #204051;
   font-size: 1.2em;
+}
+
+.show-container > .image {
+  padding-top: 20px;
+}
+
+.ui.segment {
+  font-size: 16px;
+}
+
+.ui.segment.tool>p {
+  font-size: 16px;
+}
+
+.ui.segment.tool>h4 {
+  font-size: 18px;
 }

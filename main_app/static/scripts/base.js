@@ -1,9 +1,9 @@
 const modal = type => {
   $(`#${type}`)
-      .modal({
-          blurring: true
-      })
-      .modal('show');
+    .modal({
+      blurring: true
+    })
+    .modal('show');
 };
 
 /* Event Listener */
@@ -17,12 +17,11 @@ $('#create-switch').on('click', () => modal('create-switch-form'));
 $('#delete-confirm').on('click', () => modal('delete'));
 
 $('.special.cards .image').dimmer({
-    on: 'hover'
-  });
+  on: 'hover'
+});
 
-  $(document).ready(function () {
-    window.onload = function () {
-      $('.ui.accordion').accordion();
-    };
-  });
-  
+$(document).ready(function () {
+  window.onload = function () {
+    $('.ui.accordion').accordion();
+  };
+});

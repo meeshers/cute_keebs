@@ -7,9 +7,9 @@
 {% block content %}
 <div>
   <form class="ui form" action="{% url 'edit_tracker' tracker.id %}" method="POST">
-    <h4 class="ui dividing header">
+    <h1 class="ui dividing header">
       Edit Tracker
-    </h4>
+    </h1>
     {% csrf_token %}
   <div class="fields">
     <div class="seven wide field">
