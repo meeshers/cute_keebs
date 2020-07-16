@@ -51,6 +51,7 @@ For the "Discover":
 ## Technologies
 Dream Keebs utilizes the following technologies:
   * HTML/CSS
+    * Semantic UI
   * Python
   * Mongo
   * Django
