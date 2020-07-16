@@ -56,6 +56,7 @@ Dream Keebs utilizes the following technologies:
   * Mongo
   * Django
   * Postgres SQL
+  * Javascript
 
 ## Installation
 To install the dependencies for this project, the user must do the following below:
