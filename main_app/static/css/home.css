@@ -198,6 +198,7 @@ hr {
 .videos{
   width: 900px;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 .ui.modal.create {
@@ -237,4 +238,8 @@ hr {
 .accordion-labels {
   color: #204051;
   font-size: 1.2em;
+}
+
+.show-container > .image {
+  padding-top: 20px;
 }
