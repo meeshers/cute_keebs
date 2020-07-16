@@ -60,7 +60,7 @@ Dream Keebs utilizes the following technologies:
 To install the dependencies for this project, the user must do the following below:
   * Make sure they are running a virtual environment in python 3
   * Activate the virtual environment
-  * Run "pip3 install -r requirements.txt"
+  * Run `pip3 install -r requirements.txt`
  
       * IF it does not work:
       * Install pip packages for Django and psycopg2 using `pip3 install Django` and `pip3 install psycopg2` or `psycopg2-binary`
