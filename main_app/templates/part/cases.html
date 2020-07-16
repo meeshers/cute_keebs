@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-<div>
   <h1 class="ui dividing header">Cases</h1>
 
   {% for case in cases %}
@@ -67,7 +66,7 @@
         <p>Please enter a valid URL for the image field!</p>
         {% csrf_token %}
         {% for field in case_form %}
-        <label class="label">{{field.label}}</label>
+        <b class="add-part">{{field.label}}</b>
         <br>
         <div class="ui input">
           {{field }}
@@ -81,5 +80,4 @@
     </div>
     </form>
   </div>
-</div>
 {% endblock %}

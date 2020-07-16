@@ -57,7 +57,7 @@
         <p>Please enter a valid URL for the image field!</p>
         {% csrf_token %}
         {% for field in keycap_form %}
-        <label class="label">{{field.label}}</label>
+        <b class="add-part">{{field.label}}</b>
         <br>
         <div class="ui input">
           {{field }}

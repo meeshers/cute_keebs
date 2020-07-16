@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="ui dividing header">Switches</h1>
-
+<div>
+  <h1 class="ui dividing header">Switches</h1>
   {% for switch in switches %}
   <div class="ui raised segment">
     <a href="{% url 'switch' switch.id %}">
@@ -17,17 +17,21 @@
           <img src="{{switch.image}}" alt="" class="ui medium image">
         </div>
         <div class="info">
-          <label for="switch_type"><h4>Switch type:</h4> </label>
+          <label for="switch_type">
+            <h4>Switch type:</h4>
+          </label>
           {%if switch.switch_type == 'LI' %}
-            Linear
+          Linear
           {% elif switch.switch_type == 'TA'%}
-            Tactile
+          Tactile
           {% elif switch.switch_type == 'CL'%}
-            Clicky
+          Clicky
           {% elif switch.switch_type == 'MI'%}
-            Other
+          Other
           {% endif %} <br>
-          <label for="description"><h4>Description:</h4> </label>{{switch.description}}
+          <label for="description">
+            <h4>Description:</h4>
+          </label>{{switch.description}}
         </div>
       </div>
     </a>
@@ -37,7 +41,7 @@
   <div class="ui raised segment">
     <h3 class="ui left floated header">Don't see the part you are looking for?</h3>
     <div class="ui clearing divider"></div>
-    <a class="ui teal button"id="create-switch">Add Part</a>
+    <a class="ui teal button" id="create-switch">Add Part</a>
   </div>
 
   <!-- modal -->
@@ -51,7 +55,7 @@
         <p>Please enter a valid URL for the image field!</p>
         {% csrf_token %}
         {% for field in switch_form %}
-        <label class="label">{{field.label}}</label>
+        <b class="add-part">{{field.label}}</b>
         <br>
         <div class="ui input">
           {{field }}

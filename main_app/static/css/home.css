@@ -2,8 +2,8 @@ body {
   background-color: #F0F0F0;
   text-align: center;
   font-size: 17px;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  position: relative;
 }
 
 .error {
@@ -32,8 +32,8 @@ body {
 
 .intro {
   position: absolute;
-  top: 35%;
-  left: 26%;
+  top: 20%;
+  left: 30%;
   background-color: rgba(224, 224, 224, 0.8);
   padding: 30px;
   border-radius: 10px;
@@ -47,14 +47,21 @@ body {
   color: #888888;
 }
 
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 40px;
+  display: block;
+}
 .footer {
   background-color: #888888;
   color: white;
   font-size: 15px;
   text-align: center;
-  position: relative;
+  position: absolute;
   padding: 10px;
-  align-self: flex-end;
+  bottom: 0;
+  width: 100%
 }
 
 hr {
@@ -256,4 +263,9 @@ hr {
 
 .ui.segment.tool>h4 {
   font-size: 18px;
+}
+
+.add-part {
+  font-size: 17px;
+  color: #204051;
 }
