@@ -1,4 +1,6 @@
 # Dream Keebs
+
+https://dream-keebs.herokuapp.com/
 ## Introduction
 Dream Keebs is a site made for both new and old keyboard enthusiasts. It takes into account of each keyboard component, breaks it down, and allows the community to contribute by adding parts that they would like to put into their own keyboard if the default options already provided do not match their needs. Some users may already have a vast number of keyboards, so being able to have a place to access the information about each individual keyboard will help immensely. Other users may just be starting out and testing the waters on their first custom build. By reading up on the various types of parts gathered in one location, it will help the users pick their ideal parts. Another large part of becoming a keyboard enthusiast is being able to keep track of many interest checks and group buys. This site has a feature for that as well to help manage everything in one place!
 
@@ -67,6 +69,7 @@ To install the dependencies for this project, the user must do the following bel
       * IF it does not work:
       * Install pip packages for Django and psycopg2 using `pip3 install Django` and `pip3 install psycopg2` or `psycopg2-binary`
   * Run `python3 manage.py migrate` to import all models
+  
   OPTIONAL:
   * To load the JSON data into the database, you must do `python3 manage.py loaddata /main_app/fixture/file_name.json`
 
