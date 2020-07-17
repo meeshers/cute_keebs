@@ -81,4 +81,4 @@ To install the dependencies for this project, the user must do the following bel
 
 ## Unsolved Problems
  * Sign up/Sign in verification not fully functioning
- * Creation of keyboard in a single step rather than splitting it up
+ * Creation of keyboard requires two steps instead of one
