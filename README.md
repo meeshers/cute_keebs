@@ -82,3 +82,6 @@ To install the dependencies for this project, the user must do the following bel
 ## Unsolved Problems
  * Sign up/Sign in verification not fully functioning
  * Creation of keyboard requires two steps instead of one
+ 
+## Images
+ * Stock images were taken from various websites such as KBDFans, Key Company, Drop 
